@@ -6,44 +6,42 @@ public class NewPlayer : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed = 2.5f;
-    public float backwardSpeedMultiplier = 0.7f;
-    public float turnSpeed = 120f;
+    //The player is inputting inversely
+    public bool shouldInvertMovement;
+    //The player is walking in a scene that should be inverted, but did release the keys
+    public bool shouldBeInvertMovement;
+    [Space]
+    [Header("References")]
+    public GameObject playerObj;
 
     private float verticalInput;
     private float horizontalInput;
+    
 
     void Update()
     {
-        ReadInput();
-        HandleRotation();
-        HandleMovement();
-    }
-
-    private void ReadInput()
-    {
-        verticalInput = Input.GetAxisRaw("Vertical");     // W/S
-        horizontalInput = Input.GetAxisRaw("Horizontal"); // A/D
-    }
-
-    private void HandleRotation()
-    {
-        // A/D：原地转向
-        float yaw = horizontalInput * turnSpeed * Time.deltaTime;
-        transform.Rotate(0f, yaw, 0f);
-    }
-
-    private void HandleMovement()
-    {
-        // W/S：沿角色当前朝向前后移动
-        float currentSpeed = moveSpeed;
-
-        // 后退可以稍微慢一点，更像老生化
-        if (verticalInput < 0f)
+        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (shouldInvertMovement)
         {
-            currentSpeed *= backwardSpeedMultiplier;
+            verticalInput *= -1;
+            horizontalInput *= -1;
         }
+        /*
+        transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
+        playerObj.transform.forward = new Vector3(horizontalInput, 0, verticalInput);
+        */
+        Vector3 moveDir = new Vector3(horizontalInput, 0f, verticalInput);
 
-        Vector3 move = transform.forward * verticalInput * currentSpeed * Time.deltaTime;
-        transform.position += move;
+        // 防止斜向移动变快
+        moveDir = Vector3.ClampMagnitude(moveDir, 1f);
+
+        transform.Translate(moveDir * moveSpeed * Time.deltaTime, Space.World);
+
+        if (moveDir.sqrMagnitude > 0.001f)
+        {
+            playerObj.transform.forward = moveDir;
+        }
     }
+
 }
