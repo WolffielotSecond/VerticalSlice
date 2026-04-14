@@ -19,6 +19,8 @@ public class NewPlayer : MonoBehaviour
     private float verticalInput;
     private float horizontalInput;
 
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -62,5 +64,7 @@ public class NewPlayer : MonoBehaviour
             playerObj.transform.forward = moveDir;
         }
     }
+
+    
 
 }
