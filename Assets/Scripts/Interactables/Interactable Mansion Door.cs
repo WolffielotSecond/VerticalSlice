@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class InteractableMansionDoor : InteractableBase
 {
+    [SerializeField] private string _sceneName = "Mansion";
     public override void interact()
     {
-        Debug.Log("You open the mansion door and step inside. The adventure begins!");
+         //open new scene
+         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName);
     }
 }
