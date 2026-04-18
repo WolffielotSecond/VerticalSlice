@@ -31,7 +31,13 @@ public class NewPlayer : MonoBehaviour
     {
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-        
+
+        //if didn't receive input of wsad, set shouldInvertMovement to shouldBeInvertMovement
+        if (verticalInput == 0 && horizontalInput == 0)
+        {
+            shouldInvertMovement = shouldBeInvertMovement;
+        }
+
         if (shouldInvertMovement)
         {
             verticalInput *= -1;
