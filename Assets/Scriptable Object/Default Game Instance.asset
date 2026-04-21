@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d622ef12da41844bd8ff273d161d97, type: 3}
+  m_Name: Default Game Instance
+  m_EditorClassIdentifier: 
+  Room_A_Unlocked: 0
+  Room_B_Unlocked: 0
+  Room_C_Unlocked: 0
+  Key_A_Picked: 0
+  Key_B_Picked: 0
+  Key_C_Picked: 0
+  Game_Completed: 0

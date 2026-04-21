@@ -10,7 +10,8 @@ public class InteractableBase : MonoBehaviour, InteractableInterface
     {
         Item, //钥匙，ammo，药
         Terminal, //门
-        Portal //房子出入口的门
+        Portal_in, //房子出入口的门
+        Portal_out //房子出入口的门
     }
     [SerializeField] private InteractableType _type;
     public TextMeshPro interactionText;
@@ -18,7 +19,8 @@ public class InteractableBase : MonoBehaviour, InteractableInterface
     {
         InteractableType.Item => "Pick Up",
         InteractableType.Terminal => "Interact",
-        InteractableType.Portal => "Enter",
+        InteractableType.Portal_in => "Enter",
+        InteractableType.Portal_out => "Leave",
         _ => "Unknown"
     };
     public string interactableName;

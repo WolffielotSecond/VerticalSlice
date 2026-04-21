@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractableMansionDoor : InteractableBase
 {
@@ -8,6 +9,6 @@ public class InteractableMansionDoor : InteractableBase
     public override void interact()
     {
          //open new scene
-         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName);
+         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName, LoadSceneMode.Single);
     }
 }
