@@ -25,7 +25,7 @@ public class NewPlayer : MonoBehaviour
     private bool isParrying = false;
     private float kickTimer = 0f;
     private bool isKicking = false;
-
+    public bool canKick = true;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -117,7 +117,7 @@ public class NewPlayer : MonoBehaviour
             isParrying = true;
             isKicking = false;
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && canKick && isKicking == false)
         {
             _animator.SetTrigger("Kick");
             kickTimer = 0f;

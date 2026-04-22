@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/House Interior.unity
     guid: 11edac7f6d015034f8f3abe27d7a3cc0
+  - enabled: 1
+    path: Assets/Scenes/House Outside Leave.unity
+    guid: 55e335aabf236c84a82c901ee53923f8
+  - enabled: 1
+    path: Assets/Scenes/Room A.unity
+    guid: 5cc96cfc0651e5e46ac7a8e4f886ab77
   m_configObjects: {}
