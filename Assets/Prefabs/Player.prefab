@@ -108,6 +108,7 @@ MonoBehaviour:
   moveSpeed: 3
   shouldInvertMovement: 0
   shouldBeInvertMovement: 0
+  noise: 0
   playerObj: {fileID: 4461654363721134325}
   _animator: {fileID: 6935833118941573173}
 --- !u!54 &4494043843903818828
@@ -244,7 +245,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b2d4091e3ea86be41ab48e7649cbc440, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5996773673589441968}
   m_SourcePrefab: {fileID: 100100000, guid: b2d4091e3ea86be41ab48e7649cbc440, type: 3}
 --- !u!4 &3936475575062571599 stripped
 Transform:
@@ -256,6 +260,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b2d4091e3ea86be41ab48e7649cbc440, type: 3}
   m_PrefabInstance: {fileID: 3543086956594744740}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5996773673589441968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461654363721134325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddfa2928da2e034ba1ac8c9a61db9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraShake: {fileID: 0}
 --- !u!95 &6935833118941573173 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b2d4091e3ea86be41ab48e7649cbc440, type: 3}

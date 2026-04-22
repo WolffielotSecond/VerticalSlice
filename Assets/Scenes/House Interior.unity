@@ -1793,7 +1793,7 @@ PrefabInstance:
     - target: {fileID: 8511283420596927716, guid: b435c4c58931c1f4791c3cf6e2032a4c, type: 3}
       propertyPath: _mainCamera
       value: 
-      objectReference: {fileID: 2021726937}
+      objectReference: {fileID: 1814417046}
     - target: {fileID: 8511283420596927716, guid: b435c4c58931c1f4791c3cf6e2032a4c, type: 3}
       propertyPath: isCenturalRoom
       value: 1
@@ -3985,6 +3985,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3.75
       objectReference: {fileID: 0}
+    - target: {fileID: 5996773673589441968, guid: 5d22f7f2677a48b4db12320dec3db7de, type: 3}
+      propertyPath: _cameraShake
+      value: 
+      objectReference: {fileID: 1814417045}
     - target: {fileID: 6338552956996336796, guid: 5d22f7f2677a48b4db12320dec3db7de, type: 3}
       propertyPath: shouldInvertMovement
       value: 1
@@ -5067,6 +5071,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8985cd80fc763c44ba4f3a02e5477e0d, type: 3}
+--- !u!114 &1814417045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8754128845987596781, guid: 8985cd80fc763c44ba4f3a02e5477e0d, type: 3}
+  m_PrefabInstance: {fileID: 1814417044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814417046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2e6473c17fc1f43ab2971a29c93596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1814417046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2811813781210289219, guid: 8985cd80fc763c44ba4f3a02e5477e0d, type: 3}
+  m_PrefabInstance: {fileID: 1814417044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1919939027
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,11 +5672,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010500232}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2021726937 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 359665544703494384, guid: 8985cd80fc763c44ba4f3a02e5477e0d, type: 3}
-  m_PrefabInstance: {fileID: 1814417044}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2036317095
 GameObject:
   m_ObjectHideFlags: 0
