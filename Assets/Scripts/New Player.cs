@@ -11,6 +11,7 @@ public class NewPlayer : MonoBehaviour
     public bool shouldInvertMovement;
     //The player is walking in a scene that should be inverted, but did release the keys
     public bool shouldBeInvertMovement;
+    public float noise = 0f;
     [Space]
     [Header("References")]
     public GameObject playerObj;
