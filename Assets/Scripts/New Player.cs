@@ -2,6 +2,7 @@ using GLTFast.Schema;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class NewPlayer : MonoBehaviour
 {
@@ -40,6 +41,11 @@ public class NewPlayer : MonoBehaviour
     public void DoCameraShake()
     {
         Singleton.Instance._mainCamera.GetComponent<MainCamera>().StartCoroutine(Singleton.Instance._mainCamera.GetComponent<CameraShake>().Shake(0.15f, 0.4f));
+    }
+
+    public void SetCanKick(bool value)
+    {
+        canKick = value;
     }
 
     void Update()
@@ -126,6 +132,13 @@ public class NewPlayer : MonoBehaviour
             parryTimer = 0f;
             isParrying = true;
             isKicking = false;
+            Debug.Log(Variables.Object(gameObject).Get<GameObject>("enemy ref") != null);
+            if (Variables.Object(gameObject).Get<GameObject>("enemy ref") != null)
+            {
+                //face the enemy when parrying
+                playerObj.transform.LookAt(Variables.Object(gameObject).Get<GameObject>("enemy ref").transform);
+                Debug.Log("Player is parrying and facing the enemy");
+            }
         }
         if (Input.GetKeyDown(KeyCode.F) && canKick && isKicking == false)
         {
@@ -133,6 +146,13 @@ public class NewPlayer : MonoBehaviour
             kickTimer = 0f;
             isKicking = true;
             isParrying = false;
+            if (Variables.Object(gameObject).Get<GameObject>("enemy ref") != null)
+            {
+                //face the enemy when parrying
+                playerObj.transform.LookAt(Variables.Object(gameObject).Get<GameObject>("enemy ref").transform);
+                Debug.Log("Player is parrying and facing the enemy");
+                Variables.Object(gameObject).Get<GameObject>("enemy ref").GetComponent<ZombieStatsRegulator>().TakeDamage(50);
+            }
         }
 
     }

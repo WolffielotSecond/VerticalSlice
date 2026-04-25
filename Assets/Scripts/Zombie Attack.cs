@@ -5,16 +5,53 @@ using Unity.VisualScripting;
 
 public class ZombieAttack : MonoBehaviour
 {
+    public Animator animator;
+    public ZombieAttackSphereScript attackSphere;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     public void Attack()
     {
         if (Singleton.Instance._player.GetComponent<NewPlayer>().GetParrying())
         {
-            Variables.Object(gameObject).Set("IsStunned", true);
+            GetComponent<ZombieStatsRegulator>().ReduceTenacity(100);
             Singleton.Instance._player.GetComponent<NewPlayer>().DoCameraShake();
         }
         else
         {
-            Debug.Log("Player has been hit");
+            if (attackSphere.player_ref != null)
+            {
+                Debug.Log("Player hit!");
+            }
         }
     }
+
+    public void StartRootMotion()
+    {
+        animator.applyRootMotion = true;
+    }
+
+    public void StopRootMotion()
+    {
+        animator.applyRootMotion = false;
+    }
+
+    public void StopAttacking()
+    {
+        Variables.Object(gameObject).Set("is Attacking", false);
+    }
+
+    public bool IsStunned()
+    {
+        return Variables.Object(gameObject).Get<bool>("IsStunned");
+    }
+    
+    public void Die()
+    {
+        Debug.Log("Play VFX");
+        Destroy(gameObject);
+    }
+    
 }

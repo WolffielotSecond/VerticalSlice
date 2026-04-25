@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2771054202293436890}
   - component: {fileID: 4514471638880126884}
   - component: {fileID: 8100514008848847444}
+  - component: {fileID: 6008080858025382236}
   m_Layer: 0
   m_Name: Attack Sphere
   m_TagString: Untagged
@@ -137,6 +138,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6008080858025382236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595081462392054853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7969bad3b1afe49bcaeb40d18eb563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_ref: {fileID: 0}
 --- !u!1001 &8208300711430094129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,6 +246,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 34566640b859e4c4ba38063cc45c6791, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3551566030096092908}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 34566640b859e4c4ba38063cc45c6791, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4894321780333157198}
   m_SourcePrefab: {fileID: 100100000, guid: 34566640b859e4c4ba38063cc45c6791, type: 3}
 --- !u!95 &2342764231878820000 stripped
 Animator:
@@ -417,3 +434,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c13e33f40f3c74a933cac259204269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  attackSphere: {fileID: 6008080858025382236}
+--- !u!114 &4894321780333157198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018695542538846304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed5c533acd03db4d992b5ac3419ed64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  _zombieAttack: {fileID: 0}
