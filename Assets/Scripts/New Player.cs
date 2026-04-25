@@ -26,10 +26,20 @@ public class NewPlayer : MonoBehaviour
     private float kickTimer = 0f;
     private bool isKicking = false;
     public bool canKick = true;
+
+    public bool GetParrying()
+    {
+        return parrywindow;
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         //_animator = playerObj.GetComponent<Animator>();
+    }
+
+    public void DoCameraShake()
+    {
+        Singleton.Instance._mainCamera.GetComponent<MainCamera>().StartCoroutine(Singleton.Instance._mainCamera.GetComponent<CameraShake>().Shake(0.15f, 0.4f));
     }
 
     void Update()
