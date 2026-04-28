@@ -10,7 +10,7 @@ Meanwhile, there is a sequence in the On Update function. While doing the logic 
 
 Q2. 
 
-<img width="2288" height="1500" alt="无标题绘图" src="https://github.com/user-attachments/assets/71e06b5d-3a7f-42bd-aa49-68930d03f99d" />
+<img width="2288" height="1500" alt="无标题绘图" src="https://github.com/user-attachments/assets/a033f257-ea66-4b6c-9eb8-dfad0aee710a" />
 
 I Updated the Camera sections and made it a new system. Since my original plan is to make a third person over-the-shoulder game but I failed to implement that, so I changed it to a fixed camera game, and it will include a lot of new things like a camera controller to document the different positions of the camera locations and the areas where the camera position will change. There is also a facter of when the direction of the camera change, the input of the player will change correspondingly, but the change isn't abrupt, but with a buffer, the inverse input won't happen unless the player releases all the movement keys.
 
@@ -26,4 +26,32 @@ Milestone 4 Devlog goes here.
 ## Final Devlog
 Final Devlog goes here.
 ## Open-source assets
-- Cite any external assets used here!
+
+[Road](https://sketchfab.com/3d-models/road--avenue--street-7f657c3eceb343ceaf5e542c50dab27a)
+
+[Dirt Material](https://www.fab.com/listings/1b83d08e-77fd-4885-9dce-32d8658b5559)
+
+[Mansion Model](https://sketchfab.com/3d-models/x-ghosthouse-west-4eecf9f0af5a4a9c8c930c9e562434ed)
+
+[Dead Trees](https://sketchfab.com/3d-models/psx-dead-tree-pack-40510061c9814223b204f03941e4c589#download)
+
+[Mansion Interior](https://sketchfab.com/3d-models/the-upper-vestibule-e74928dc62fe457892e52dd97b6aa6e0)
+
+[Chandelier](https://sketchfab.com/3d-models/antique-chandelier-c98d235a1df849388423b06f4e0a858c)
+
+[Wood Planks](https://sketchfab.com/3d-models/set-of-wood-planks-1901d8f1e7354ea289860d29c6ba0046)
+
+[Stone Wall](https://sketchfab.com/3d-models/damaged-wall-11616746d0ea4bd59a2d9cf9a2b2fdfa)
+
+[Doors](https://sketchfab.com/3d-models/low-poly-psx-style-wooden-interior-doors-pack-02e442c6d4a24df29624808d058f010a)
+
+[Key1](https://sketchfab.com/3d-models/key-a4aca11a2259462f8735a60eead33962)
+
+[Key2](https://sketchfab.com/3d-models/key-copper-4b4ff0b9c28c45528553ea3f30692305)
+
+[Key3](https://sketchfab.com/3d-models/vintage-ornamental-skeleton-key-62b40f33a3c24fe78883c624e7571dba)
+
+[Hatchet](https://sketchfab.com/3d-models/tactical-hatchet-89744b83feca42748eb84a465089cfbc)
+
+[Gun](https://sketchfab.com/3d-models/hand-gun-8aaf25a14f034014bfc3b83a69ad26be)
+
