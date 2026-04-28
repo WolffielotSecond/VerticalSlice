@@ -20,3 +20,9 @@ MonoBehaviour:
   Key_B_Picked: 0
   Key_C_Picked: 0
   Game_Completed: 0
+  hasHatchet: 0
+  hasGun: 0
+  ammoLoaded: 78
+  ammoCarried: 91
+  medkitsCarried: 0
+  Health: 100

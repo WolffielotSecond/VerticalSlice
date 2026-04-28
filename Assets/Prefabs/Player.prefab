@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 6165124933814337282}
   - component: {fileID: 6019590933961090630}
   - component: {fileID: 4910486011948943020}
+  - component: {fileID: 4161393359756590667}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -294,6 +295,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentInteractable: {fileID: 0}
+--- !u!114 &4161393359756590667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004926980208260484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8da7e910d278e42882c8270f46187c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  medkits: 0
+  ammo: 0
+  hasPistol: 0
+  hasHatchet: 0
+  hasKeyA: 0
+  hasKeyB: 0
+  hasKeyC: 0
 --- !u!1001 &3543086956594744740
 PrefabInstance:
   m_ObjectHideFlags: 0

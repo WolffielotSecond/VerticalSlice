@@ -21,4 +21,10 @@ public class GameInstance : ScriptableObject
     public bool Key_B_Picked;
     public bool Key_C_Picked;
     public bool Game_Completed;
+    public bool hasHatchet;
+    public bool hasGun;
+    public int ammoLoaded;
+    public int ammoCarried;
+    public int medkitsCarried;
+    public float Health;
 }

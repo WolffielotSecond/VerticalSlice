@@ -15,8 +15,14 @@ public class InteractableMansionDoor : InteractableBase
     [SerializeField] private string _sceneName = "Mansion";
     [SerializeField] private bool isRoom = false;
     [SerializeField] private DoorSet Which_Door;
+
+    private void load_Inventory_Stats()
+    {
+        Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
+    }
     public override void interact()
     {
+        load_Inventory_Stats();
         if (isRoom)
         {
             switch (Which_Door)
