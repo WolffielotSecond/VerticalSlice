@@ -21,6 +21,7 @@ public class Singleton : MonoBehaviour
     [Header("Õ®”√")]
     public GameObject _player;
     public GameObject _mainCamera;
+    public GameObject _UI;
     public Transform _DefaultCameraLocation;
     [Space]
     [Header(" ‡≈¶")]

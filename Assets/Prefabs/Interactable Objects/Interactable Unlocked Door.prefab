@@ -132,6 +132,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7539894960676873807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2256950424421642561}
+  m_Layer: 0
+  m_Name: Camera Location
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2256950424421642561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539894960676873807}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.07866327, y: -0.29992214, z: -0.0017323792, w: 0.9507133}
+  m_LocalPosition: {x: 0.453, y: 1.351, z: -0.483}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5853336411476414201}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6590850489373484935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197,6 +228,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 742071313752500606, guid: 1ff91b6d4a3d98143a035d2aacf2ef9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3964868673447533944}
+    - targetCorrespondingSourceObject: {fileID: 742071313752500606, guid: 1ff91b6d4a3d98143a035d2aacf2ef9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2256950424421642561}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 513298622209884692, guid: 1ff91b6d4a3d98143a035d2aacf2ef9c, type: 3}
       insertIndex: -1
@@ -239,6 +273,8 @@ MonoBehaviour:
   interactionText: {fileID: 3255594750820423252}
   interactableName: Door
   _animator: {fileID: 6568326855483071871}
+  _key: {fileID: 204330362313250893}
+  CameraLocation: {fileID: 2256950424421642561}
 --- !u!1001 &8426821438152184505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,6 +343,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8514046379448273652, guid: e08f8af997ed3cf4896b44d29b731206, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -315,6 +355,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6568326855483071871}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: e08f8af997ed3cf4896b44d29b731206, type: 3}
+--- !u!23 &204330362313250893 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8514046379448273652, guid: e08f8af997ed3cf4896b44d29b731206, type: 3}
+  m_PrefabInstance: {fileID: 8426821438152184505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5940837001987065161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: e08f8af997ed3cf4896b44d29b731206, type: 3}

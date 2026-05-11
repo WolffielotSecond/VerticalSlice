@@ -18,6 +18,10 @@ public class Player_Stats_Handler : MonoBehaviour
     public bool hasKeyB = false;
     public bool hasKeyC = false;
 
+    public bool RoomAUnlocked = false;
+    public bool RoomBUnlocked = false;
+    public bool RoomCUnlocked = false;
+
     public void loadStats()
     {
         GameInstanceHolder.instance.gameInstance.Health = Health;
@@ -29,6 +33,9 @@ public class Player_Stats_Handler : MonoBehaviour
         GameInstanceHolder.instance.gameInstance.Key_A_Picked = hasKeyA;
         GameInstanceHolder.instance.gameInstance.Key_B_Picked = hasKeyB;
         GameInstanceHolder.instance.gameInstance.Key_C_Picked = hasKeyC;
+        GameInstanceHolder.instance.gameInstance.Room_A_Unlocked = RoomAUnlocked;
+        GameInstanceHolder.instance.gameInstance.Room_B_Unlocked = RoomBUnlocked;
+        GameInstanceHolder.instance.gameInstance.Room_C_Unlocked = RoomCUnlocked;
     }
 
     public void loadStatsFromInstance()
@@ -42,6 +49,9 @@ public class Player_Stats_Handler : MonoBehaviour
         hasKeyA = GameInstanceHolder.instance.gameInstance.Key_A_Picked;
         hasKeyB = GameInstanceHolder.instance.gameInstance.Key_B_Picked;
         hasKeyC = GameInstanceHolder.instance.gameInstance.Key_C_Picked;
+        RoomAUnlocked = GameInstanceHolder.instance.gameInstance.Room_A_Unlocked;
+        RoomBUnlocked = GameInstanceHolder.instance.gameInstance.Room_B_Unlocked;
+        RoomCUnlocked = GameInstanceHolder.instance.gameInstance.Room_C_Unlocked;
     }
 
     private void Start()
