@@ -13,6 +13,7 @@ public class AreaTrigger : MonoBehaviour
         {
             Singleton.Instance._mainCamera.GetComponent<MainCamera>().SetCameraPos(cameraPos);
             Singleton.Instance._player.GetComponent<NewPlayer>().shouldBeInvertMovement = isInvertInputArea;
+            Singleton.Instance._player.GetComponent<NewPlayer>().hasPendingYaw = true;
             //Debug.Log("Trigger");
         }
     }

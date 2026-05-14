@@ -28,6 +28,13 @@ public class NewPlayer : MonoBehaviour
     private bool isKicking = false;
     public bool canKick = true;
 
+    [Space]
+    [Header("No editing")]
+    public float actionMoveYaw;
+    public float pendingMoveYaw;
+    public bool hasPendingYaw;
+    private bool wHeld, aHeld, sHeld, dHeld;
+
     public bool GetParrying()
     {
         return parrywindow;
@@ -36,6 +43,7 @@ public class NewPlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         //_animator = playerObj.GetComponent<Animator>();
+        actionMoveYaw = Singleton.Instance._mainCamera.transform.eulerAngles.y;
     }
 
     public void DoCameraShake()
@@ -78,12 +86,54 @@ public class NewPlayer : MonoBehaviour
         {
             _animator.applyRootMotion = false;
         }
+        //获取现在相机的朝向
+        pendingMoveYaw = Singleton.Instance._mainCamera.transform.eulerAngles.y;
+        bool newW = Input.GetKey(KeyCode.W);
+        bool newA = Input.GetKey(KeyCode.A);
+        bool newS = Input.GetKey(KeyCode.S);
+        bool newD = Input.GetKey(KeyCode.D);
+        bool anyKeyReleased =
+            (wHeld && !newW) ||
+            (aHeld && !newA) ||
+            (sHeld && !newS) ||
+            (dHeld && !newD);
+        if (hasPendingYaw && anyKeyReleased)
+        {
+            // 真正切换移动方向
+            actionMoveYaw = pendingMoveYaw;
+
+            // 清除等待状态
+            hasPendingYaw = false;
+        }
+
+        wHeld = newW;
+        aHeld = newA;
+        sHeld = newS;
+        dHeld = newD;
+
+        Vector2 input = Vector2.zero;
+
+        if (newW) input.y += 1;
+        if (newS) input.y -= 1;
+        if (newD) input.x += 1;
+        if (newA) input.x -= 1;
+
+        input = Vector2.ClampMagnitude(input, 1f);
+
+        Quaternion camRot = Quaternion.Euler(0f, actionMoveYaw, 0f);
+
+        Vector3 forward = camRot * Vector3.forward;
+        Vector3 right = camRot * Vector3.right;
+
+
 
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-
+        //Debug.Log("Vertical Input: " + verticalInput);
+        //Debug.Log("Horizontal Input: " + horizontalInput);
         //if didn't receive input of wsad, set shouldInvertMovement to shouldBeInvertMovement
-        if (verticalInput == 0 && horizontalInput == 0)
+
+        if (Mathf.Abs(verticalInput) < 1 && Mathf.Abs(horizontalInput) == 0)
         {
             shouldInvertMovement = shouldBeInvertMovement;
         }
@@ -108,10 +158,11 @@ public class NewPlayer : MonoBehaviour
         transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
         playerObj.transform.forward = new Vector3(horizontalInput, 0, verticalInput);
         */
-        Vector3 moveDir = new Vector3(horizontalInput, 0f, verticalInput);
+        Vector3 moveDir = forward * input.y +
+            right * input.x;
 
         // 防止斜向移动变快
-        moveDir = Vector3.ClampMagnitude(moveDir, 1f);
+        //moveDir = Vector3.ClampMagnitude(moveDir, 1f);
         if (isParrying == false && isKicking == false)
         {
             rb.MovePosition(transform.position + moveDir * moveSpeed * Time.fixedDeltaTime);

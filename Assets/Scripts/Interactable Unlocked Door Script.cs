@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum WhichDoor
 {
@@ -15,7 +16,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
     //[SerializeField] private GameObject key;
     public Animator _animator;
 
-    public MeshRenderer _key;
+    public GameObject _key;
     public Transform CameraLocation;
 
     private float timer = 0;
@@ -27,13 +28,54 @@ public class InteractableUnlockedDoorScript : InteractableBase
     //private Transform temptransformCamera;
     private Vector3 tempPositionCamera;
     private Quaternion tempRotCamera;
+    private void Start()
+    {
+        _key.SetActive(false);
+        switch (_doortype)
+        {
+            case WhichDoor.A:
+                if (GameInstanceHolder.instance.gameInstance.Room_A_Unlocked)
+                {
+                    interactionText.SetText("Enter");
+                }
+                else
+                {
+                    interactionText.SetText("Interact");
+                }
+                break;
+            case WhichDoor.B:
+                if (GameInstanceHolder.instance.gameInstance.Room_B_Unlocked)
+                {
+                    interactionText.SetText("Enter");
+                }
+                else
+                {
+                    interactionText.SetText("Interact");
+                }
+                break;
+            case WhichDoor.C:
+                if (GameInstanceHolder.instance.gameInstance.Room_C_Unlocked)
+                {
+                    interactionText.SetText("Enter");
+                }
+                else
+                {
+                    interactionText.SetText("Interact");
+                }
+                break;
+        }
+        //interactionText.SetText("Interact");
+    }
     public override void interact()
     {
+
         switch (_doortype)
         {
             case WhichDoor.A:
                 if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().RoomAUnlocked)
                 {
+                    Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Room A", LoadSceneMode.Single);
                     break;
                 }
                 else
@@ -98,14 +140,12 @@ public class InteractableUnlockedDoorScript : InteractableBase
         Singleton.Instance._mainCamera.transform.rotation = tempRotCamera;
     }
 
-    public void Start()
-    {
-        _key.enabled = false;
-    }
+    
 
     public void play_Unlock_Animation()
     {
-        _key.enabled = true;
+        interactionText.SetText("Enter");
+        _key.SetActive(true);
         _animator.SetTrigger("Unlock");
         playAnimation = true;
         Debug.Log("Door Unlocked");
@@ -121,7 +161,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
             timer += Time.deltaTime;
             if (timer >= 2f)
             {
-                _key.enabled = false;
+                _key.SetActive(false);
                 playAnimation = false;
                 Singleton.Instance._UI.GetComponent<UI>().CloseInteractionMenu();
                 timer = 0f;

@@ -1,0 +1,1187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1521398425 &-8767050288273913235
+VideoBuildInfo:
+  m_VideoClipCount: 0
+  m_IsVideoModuleDisabled: 0
+--- !u!114 &-7544777604763451314
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13805, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7517040457263037204
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13800, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedDependencies:
+  - key: Required by Scripts
+    value: []
+    icon: class/MonoScript
+    size: 0
+  - key: AI Module
+    value:
+    - NavMeshAgent
+    - NavMeshData
+    - NavMeshObstacle
+    - NavMeshProjectSettings
+    - NavMeshSettings
+    icon: package/com.unity.modules.ai
+    size: 0
+  - key: NavMeshAgent
+    value:
+    - Assets/Scenes/Room A.unity
+    icon: class/NavMeshAgent
+    size: 0
+  - key: Assets/Scenes/Room A.unity
+    value: []
+    icon: class/SceneAsset
+    size: 0
+  - key: NavMeshData
+    value:
+    - Assets/Scenes/Room A.unity
+    icon: class/NavMeshData
+    size: 0
+  - key: NavMeshObstacle
+    value: []
+    icon: class/NavMeshObstacle
+    size: 0
+  - key: NavMeshProjectSettings
+    value: []
+    icon: class/NavMeshProjectSettings
+    size: 0
+  - key: NavMeshSettings
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/NavMeshSettings
+    size: 0
+  - key: Assets/Scenes/House Interior.unity
+    value: []
+    icon: class/SceneAsset
+    size: 0
+  - key: Assets/Scenes/House Outside Leave.unity
+    value: []
+    icon: class/SceneAsset
+    size: 0
+  - key: Assets/Scenes/House Outside.unity
+    value: []
+    icon: class/SceneAsset
+    size: 0
+  - key: Animation Module
+    value:
+    - AnimationClip
+    - Animator
+    - AnimatorController
+    - AnimatorOverrideController
+    - Avatar
+    - Motion
+    - RuntimeAnimatorController
+    - Required by Director Module
+    icon: package/com.unity.modules.animation
+    size: 0
+  - key: AnimationClip
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/AnimationClip
+    size: 0
+  - key: Animator
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Animator
+    size: 0
+  - key: AnimatorController
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/AnimatorController
+    size: 0
+  - key: AnimatorOverrideController
+    value: []
+    icon: class/AnimatorOverrideController
+    size: 0
+  - key: Avatar
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Avatar
+    size: 0
+  - key: Motion
+    value: []
+    icon: class/Motion
+    size: 0
+  - key: RuntimeAnimatorController
+    value: []
+    icon: class/RuntimeAnimatorController
+    size: 0
+  - key: Required by Director Module
+    value: []
+    icon: package/com.unity.modules.director
+    size: 0
+  - key: Audio Module
+    value:
+    - AudioClip
+    - AudioManager
+    - SampleClip
+    - Required by Director Module
+    icon: package/com.unity.modules.audio
+    size: 0
+  - key: AudioClip
+    value: []
+    icon: class/AudioClip
+    size: 0
+  - key: AudioManager
+    value: []
+    icon: class/AudioManager
+    size: 0
+  - key: SampleClip
+    value: []
+    icon: class/SampleClip
+    size: 0
+  - key: Core Module
+    value:
+    - Behaviour
+    - BuildSettings
+    - Camera
+    - Component
+    - ComputeShader
+    - Cubemap
+    - CubemapArray
+    - DelayedCallManager
+    - EditorExtension
+    - GameManager
+    - GameObject
+    - GlobalGameManager
+    - GraphicsSettings
+    - InputManager
+    - LevelGameManager
+    - Light
+    - LightProbes
+    - LightingSettings
+    - LightmapSettings
+    - LowerResBlitTexture
+    - Material
+    - Mesh
+    - MeshFilter
+    - MeshRenderer
+    - MonoBehaviour
+    - MonoManager
+    - MonoScript
+    - NamedObject
+    - Object
+    - PlayerSettings
+    - PreloadData
+    - QualitySettings
+    - RectTransform
+    - ReflectionProbe
+    - RenderSettings
+    - RenderTexture
+    - Renderer
+    - ResourceManager
+    - RuntimeInitializeOnLoadManager
+    - Shader
+    - ShaderNameRegistry
+    - SkinnedMeshRenderer
+    - SortingGroup
+    - Sprite
+    - SpriteAtlas
+    - SpriteRenderer
+    - TagManager
+    - TextAsset
+    - Texture
+    - Texture2D
+    - Texture2DArray
+    - Texture3D
+    - TimeManager
+    - Transform
+    - Required by AI Module
+    - Required by Animation Module
+    - Required by Audio Module
+    - Required by Director Module
+    - Required by IMGUI Module
+    - Required by ImageConversion Module
+    - Required by InputLegacy Module
+    - Required by JSONSerialize Module
+    - Required by ParticleSystem Module
+    - Required by Physics Module
+    - Required by Physics2D Module
+    - Required by RuntimeInitializeOnLoadManagerInitializer Module
+    - Required by ScreenCapture Module
+    - Required by Terrain Module
+    - Required by TextCoreFontEngine Module
+    - Required by TextCoreTextEngine Module
+    - Required by TextRendering Module
+    - Required by UI Module
+    - Required by UIElements Module
+    - Required by WebGL Module
+    icon: package/com.unity.modules.core
+    size: 0
+  - key: Behaviour
+    value: []
+    icon: class/Behaviour
+    size: 0
+  - key: BuildSettings
+    value: []
+    icon: class/BuildSettings
+    size: 0
+  - key: Camera
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Camera
+    size: 0
+  - key: Component
+    value: []
+    icon: class/Component
+    size: 0
+  - key: ComputeShader
+    value: []
+    icon: class/ComputeShader
+    size: 0
+  - key: Cubemap
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Cubemap
+    size: 0
+  - key: CubemapArray
+    value: []
+    icon: class/CubemapArray
+    size: 0
+  - key: DelayedCallManager
+    value: []
+    icon: class/DelayedCallManager
+    size: 0
+  - key: EditorExtension
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/EditorExtension
+    size: 0
+  - key: GameManager
+    value: []
+    icon: class/GameManager
+    size: 0
+  - key: GameObject
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/GameObject
+    size: 0
+  - key: GlobalGameManager
+    value: []
+    icon: class/GlobalGameManager
+    size: 0
+  - key: GraphicsSettings
+    value: []
+    icon: class/GraphicsSettings
+    size: 0
+  - key: InputManager
+    value: []
+    icon: class/InputManager
+    size: 0
+  - key: LevelGameManager
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/LevelGameManager
+    size: 0
+  - key: Light
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Light
+    size: 0
+  - key: LightProbes
+    value: []
+    icon: class/LightProbes
+    size: 0
+  - key: LightingSettings
+    value: []
+    icon: class/LightingSettings
+    size: 0
+  - key: LightmapSettings
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/LightmapSettings
+    size: 0
+  - key: LowerResBlitTexture
+    value: []
+    icon: class/LowerResBlitTexture
+    size: 0
+  - key: Material
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Material
+    size: 0
+  - key: Mesh
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Mesh
+    size: 0
+  - key: MeshFilter
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/MeshFilter
+    size: 0
+  - key: MeshRenderer
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/MeshRenderer
+    size: 0
+  - key: MonoBehaviour
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/MonoBehaviour
+    size: 0
+  - key: MonoManager
+    value: []
+    icon: class/MonoManager
+    size: 0
+  - key: MonoScript
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/MonoScript
+    size: 0
+  - key: NamedObject
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/NamedObject
+    size: 0
+  - key: Object
+    value: []
+    icon: class/Object
+    size: 0
+  - key: PlayerSettings
+    value: []
+    icon: class/PlayerSettings
+    size: 0
+  - key: PreloadData
+    value: []
+    icon: class/PreloadData
+    size: 0
+  - key: QualitySettings
+    value: []
+    icon: class/QualitySettings
+    size: 0
+  - key: RectTransform
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/RectTransform
+    size: 0
+  - key: ReflectionProbe
+    value: []
+    icon: class/ReflectionProbe
+    size: 0
+  - key: RenderSettings
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/RenderSettings
+    size: 0
+  - key: RenderTexture
+    value: []
+    icon: class/RenderTexture
+    size: 0
+  - key: Renderer
+    value: []
+    icon: class/Renderer
+    size: 0
+  - key: ResourceManager
+    value: []
+    icon: class/ResourceManager
+    size: 0
+  - key: RuntimeInitializeOnLoadManager
+    value: []
+    icon: class/RuntimeInitializeOnLoadManager
+    size: 0
+  - key: Shader
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Shader
+    size: 0
+  - key: ShaderNameRegistry
+    value: []
+    icon: class/ShaderNameRegistry
+    size: 0
+  - key: SkinnedMeshRenderer
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/SkinnedMeshRenderer
+    size: 0
+  - key: SortingGroup
+    value: []
+    icon: class/SortingGroup
+    size: 0
+  - key: Sprite
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Sprite
+    size: 0
+  - key: SpriteAtlas
+    value: []
+    icon: class/SpriteAtlas
+    size: 0
+  - key: SpriteRenderer
+    value: []
+    icon: class/SpriteRenderer
+    size: 0
+  - key: TagManager
+    value: []
+    icon: class/TagManager
+    size: 0
+  - key: TextAsset
+    value: []
+    icon: class/TextAsset
+    size: 0
+  - key: Texture
+    value: []
+    icon: class/Texture
+    size: 0
+  - key: Texture2D
+    value: []
+    icon: class/Texture2D
+    size: 0
+  - key: Texture2DArray
+    value: []
+    icon: class/Texture2DArray
+    size: 0
+  - key: Texture3D
+    value: []
+    icon: class/Texture3D
+    size: 0
+  - key: TimeManager
+    value: []
+    icon: class/TimeManager
+    size: 0
+  - key: Transform
+    value: []
+    icon: class/Transform
+    size: 0
+  - key: Required by AI Module
+    value: []
+    icon: package/com.unity.modules.ai
+    size: 0
+  - key: Required by Animation Module
+    value: []
+    icon: package/com.unity.modules.animation
+    size: 0
+  - key: Required by Audio Module
+    value: []
+    icon: package/com.unity.modules.audio
+    size: 0
+  - key: Required by IMGUI Module
+    value: []
+    icon: package/com.unity.modules.imgui
+    size: 0
+  - key: Required by ImageConversion Module
+    value: []
+    icon: package/com.unity.modules.imageconversion
+    size: 0
+  - key: Required by InputLegacy Module
+    value: []
+    icon: package/com.unity.modules.inputlegacy
+    size: 0
+  - key: Required by JSONSerialize Module
+    value: []
+    icon: package/com.unity.modules.jsonserialize
+    size: 0
+  - key: Required by ParticleSystem Module
+    value: []
+    icon: package/com.unity.modules.particlesystem
+    size: 0
+  - key: Required by Physics Module
+    value: []
+    icon: package/com.unity.modules.physics
+    size: 0
+  - key: Required by Physics2D Module
+    value: []
+    icon: package/com.unity.modules.physics2d
+    size: 0
+  - key: Required by RuntimeInitializeOnLoadManagerInitializer Module
+    value: []
+    icon: package/com.unity.modules.runtimeinitializeonloadmanagerinitializer
+    size: 0
+  - key: Required by ScreenCapture Module
+    value: []
+    icon: package/com.unity.modules.screencapture
+    size: 0
+  - key: Required by Terrain Module
+    value: []
+    icon: package/com.unity.modules.terrain
+    size: 0
+  - key: Required by TextCoreFontEngine Module
+    value: []
+    icon: package/com.unity.modules.textcorefontengine
+    size: 0
+  - key: Required by TextCoreTextEngine Module
+    value: []
+    icon: package/com.unity.modules.textcoretextengine
+    size: 0
+  - key: Required by TextRendering Module
+    value: []
+    icon: package/com.unity.modules.textrendering
+    size: 0
+  - key: Required by UI Module
+    value: []
+    icon: package/com.unity.modules.ui
+    size: 0
+  - key: Required by UIElements Module
+    value: []
+    icon: package/com.unity.modules.uielements
+    size: 0
+  - key: Required by WebGL Module
+    value: []
+    icon: package/com.unity.modules.webgl
+    size: 0
+  - key: Director Module
+    value:
+    - PlayableDirector
+    icon: package/com.unity.modules.director
+    size: 0
+  - key: PlayableDirector
+    value:
+    - Assets/Scenes/House Interior.unity
+    icon: class/PlayableDirector
+    size: 0
+  - key: IMGUI Module
+    value:
+    - Required by UIElements Module
+    icon: package/com.unity.modules.imgui
+    size: 0
+  - key: ImageConversion Module
+    value:
+    - Required by ScreenCapture Module
+    icon: package/com.unity.modules.imageconversion
+    size: 0
+  - key: InputLegacy Module
+    value:
+    - Required by IMGUI Module
+    - Required by UIElements Module
+    icon: package/com.unity.modules.inputlegacy
+    size: 0
+  - key: JSONSerialize Module
+    value:
+    - Required by RuntimeInitializeOnLoadManagerInitializer Module
+    - Required by UIElements Module
+    icon: package/com.unity.modules.jsonserialize
+    size: 0
+  - key: ParticleSystem Module
+    value:
+    - ParticleSystem
+    - ParticleSystemRenderer
+    icon: package/com.unity.modules.particlesystem
+    size: 0
+  - key: ParticleSystem
+    value: []
+    icon: class/ParticleSystem
+    size: 0
+  - key: ParticleSystemRenderer
+    value: []
+    icon: class/ParticleSystemRenderer
+    size: 0
+  - key: Physics Module
+    value:
+    - BoxCollider
+    - CapsuleCollider
+    - CharacterController
+    - Collider
+    - MeshCollider
+    - PhysicMaterial
+    - PhysicsManager
+    - Rigidbody
+    - SphereCollider
+    icon: package/com.unity.modules.physics
+    size: 0
+  - key: BoxCollider
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    icon: class/BoxCollider
+    size: 0
+  - key: CapsuleCollider
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/CapsuleCollider
+    size: 0
+  - key: CharacterController
+    value: []
+    icon: class/CharacterController
+    size: 0
+  - key: Collider
+    value: []
+    icon: class/Collider
+    size: 0
+  - key: MeshCollider
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/MeshCollider
+    size: 0
+  - key: PhysicMaterial
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/PhysicMaterial
+    size: 0
+  - key: PhysicsManager
+    value: []
+    icon: class/PhysicsManager
+    size: 0
+  - key: Rigidbody
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Rigidbody
+    size: 0
+  - key: SphereCollider
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/SphereCollider
+    size: 0
+  - key: Physics2D Module
+    value:
+    - Collider2D
+    - Joint2D
+    - Physics2DSettings
+    - Rigidbody2D
+    icon: package/com.unity.modules.physics2d
+    size: 0
+  - key: Collider2D
+    value: []
+    icon: class/Collider2D
+    size: 0
+  - key: Joint2D
+    value: []
+    icon: class/Joint2D
+    size: 0
+  - key: Physics2DSettings
+    value: []
+    icon: class/Physics2DSettings
+    size: 0
+  - key: Rigidbody2D
+    value: []
+    icon: class/Rigidbody2D
+    size: 0
+  - key: RuntimeInitializeOnLoadManagerInitializer Module
+    value:
+    - RuntimeInitializeOnLoadManagerInitializer is always required
+    icon: package/com.unity.modules.runtimeinitializeonloadmanagerinitializer
+    size: 0
+  - key: RuntimeInitializeOnLoadManagerInitializer is always required
+    value: []
+    icon: class/DefaultAsset
+    size: 0
+  - key: ScreenCapture Module
+    value: []
+    icon: package/com.unity.modules.screencapture
+    size: 0
+  - key: SharedInternals Module
+    value:
+    - Required by AI Module
+    - Required by Animation Module
+    - Required by Audio Module
+    - Required by Core Module
+    - Required by Director Module
+    - Required by IMGUI Module
+    - Required by ImageConversion Module
+    - Required by InputLegacy Module
+    - Required by JSONSerialize Module
+    - Required by ParticleSystem Module
+    - Required by Physics Module
+    - Required by Physics2D Module
+    - Required by RuntimeInitializeOnLoadManagerInitializer Module
+    - Required by ScreenCapture Module
+    - Required by Terrain Module
+    - Required by TextCoreFontEngine Module
+    - Required by TextCoreTextEngine Module
+    - Required by TextRendering Module
+    - Required by UI Module
+    - Required by UIElements Module
+    - Required by WebGL Module
+    icon: package/com.unity.modules.sharedinternals
+    size: 0
+  - key: Required by Core Module
+    value: []
+    icon: package/com.unity.modules.core
+    size: 0
+  - key: Terrain Module
+    value:
+    - Terrain
+    - TerrainData
+    icon: package/com.unity.modules.terrain
+    size: 0
+  - key: Terrain
+    value: []
+    icon: class/Terrain
+    size: 0
+  - key: TerrainData
+    value: []
+    icon: class/TerrainData
+    size: 0
+  - key: TextCoreFontEngine Module
+    value:
+    - Required by TextCoreTextEngine Module
+    - Required by UIElements Module
+    icon: package/com.unity.modules.textcorefontengine
+    size: 0
+  - key: TextCoreTextEngine Module
+    value:
+    - Required by IMGUI Module
+    - Required by UIElements Module
+    icon: package/com.unity.modules.textcoretextengine
+    size: 0
+  - key: TextRendering Module
+    value:
+    - Font
+    - TextMesh
+    - Required by IMGUI Module
+    - Required by TextCoreFontEngine Module
+    - Required by TextCoreTextEngine Module
+    - Required by UI Module
+    - Required by UIElements Module
+    icon: package/com.unity.modules.textrendering
+    size: 0
+  - key: Font
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Font
+    size: 0
+  - key: TextMesh
+    value: []
+    icon: class/TextMesh
+    size: 0
+  - key: UI Module
+    value:
+    - Canvas
+    - CanvasGroup
+    - CanvasRenderer
+    - Required by UIElements Module
+    icon: package/com.unity.modules.ui
+    size: 0
+  - key: Canvas
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/Canvas
+    size: 0
+  - key: CanvasGroup
+    value: []
+    icon: class/CanvasGroup
+    size: 0
+  - key: CanvasRenderer
+    value:
+    - Assets/Scenes/House Interior.unity
+    - Assets/Scenes/House Outside Leave.unity
+    - Assets/Scenes/House Outside.unity
+    - Assets/Scenes/Room A.unity
+    icon: class/CanvasRenderer
+    size: 0
+  - key: UIElements Module
+    value: []
+    icon: package/com.unity.modules.uielements
+    size: 0
+  - key: WebGL Module
+    value:
+    - WebGL is always required
+    icon: package/com.unity.modules.webgl
+    size: 0
+  - key: WebGL is always required
+    value: []
+    icon: class/DefaultAsset
+    size: 0
+  modules:
+  - AI Module
+  - Animation Module
+  - Audio Module
+  - Core Module
+  - Director Module
+  - IMGUI Module
+  - ImageConversion Module
+  - InputLegacy Module
+  - JSONSerialize Module
+  - ParticleSystem Module
+  - Physics Module
+  - Physics2D Module
+  - RuntimeInitializeOnLoadManagerInitializer Module
+  - ScreenCapture Module
+  - SharedInternals Module
+  - Terrain Module
+  - TextCoreFontEngine Module
+  - TextCoreTextEngine Module
+  - TextRendering Module
+  - UI Module
+  - UIElements Module
+  - WebGL Module
+  serializedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  totalSize: 0
+  builtCodePath: D:/UCIGithub/build/Build/build.wasm
+  developmentBuild: 0
+--- !u!382020655 &-6837845657692159032
+PluginBuildInfo:
+  m_RuntimePlugins:
+  - Unity.Collections.LowLevel.ILSupport
+  - Unity.Burst.Unsafe
+  - Unity.VisualScripting.Antlr3.Runtime
+  - nunit.framework
+  m_EditorPlugins:
+  - Unity.VisualScripting.sqlite3
+  - Unity.Plastic.Newtonsoft.Json
+  - libonigwrap
+  - Unity.Plastic.Antlr3.Runtime
+  - Unity.VisualScripting.YamlDotNet
+  - OnigwrapPlastic
+  - Unity.Burst.Cecil.Mdb
+  - Unity.VisualScripting.TextureAssets
+  - Unity.VisualScripting.IonicZip
+  - zlib64Plastic
+  - liblz4Plastic
+  - unityplastic
+  - JetBrains.Rider.PathLocator
+  - Unity.Burst.Cecil.Pdb
+  - Unity.Burst.Cecil
+  - log4netPlastic
+  - Unity.Burst.Cecil.Rocks
+  - lz4x64Plastic
+  - TextMateSharpPlastic
+  - TextMateSharpPlastic.Grammars
+  - ReportGeneratorMerged
+  - AppleEventIntegration
+--- !u!641289076 &-1548040719384473070
+AudioBuildInfo:
+  m_IsAudioDisabled: 0
+  m_AudioClipCount: 0
+  m_AudioMixerCount: 0
+--- !u!1125 &1
+BuildReport:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Build_2026-15-May-05-37-47
+  m_Summary:
+    buildStartTime:
+      serializedVersion: 2
+      ticks: 639143913777698259
+    buildGUID: 838ad25606d042cab2904632f4c456e4
+    platformName: WebGL
+    platformGroupName: WebGL
+    subtarget: 0
+    options: 8
+    assetBundleOptions: 0
+    outputPath: D:/UCIGithub/build
+    crc: 0
+    totalSize: 246604948
+    totalTimeTicks: 894713151
+    totalErrors: 0
+    totalWarnings: 0
+    buildType: 1
+    buildResult: 1
+  m_Files:
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/csharpactions/boot.config_7kyv.info
+    role: info
+    id: 0
+    totalSize: 39477
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/rsp/12584967124552218510.rsp
+    role: rsp
+    id: 1
+    totalSize: 47008
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/unitylinker_ber2.traceevents
+    role: traceevents
+    id: 2
+    totalSize: 17594
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/il2cpp_conv_9kjm.traceevents
+    role: traceevents
+    id: 3
+    totalSize: 557555
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/csharpactions/UnityClassRegistration.cpp_351e.info
+    role: info
+    id: 4
+    totalSize: 1222
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/rsp/6070537824006410562.rsp
+    role: rsp
+    id: 5
+    totalSize: 27814
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/rsp/8995565923215908413.rsp
+    role: rsp
+    id: 6
+    totalSize: 14527
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/csharpactions/build.framework.js_mumr.info
+    role: info
+    id: 7
+    totalSize: 626
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/csharpactions/build.framework.js.gz_iz9f.info
+    role: info
+    id: 8
+    totalSize: 471
+  - path: D:/UCIGithub/build/Build/build.framework.js.gz
+    role: gz
+    id: 9
+    totalSize: 79266
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/csharpactions/build.wasm.gz_f1j8.info
+    role: info
+    id: 10
+    totalSize: 455
+  - path: D:/UCIGithub/build/Build/build.wasm.gz
+    role: gz
+    id: 11
+    totalSize: 7772038
+  - path: D:/UCIGithub/VerticalSlice/Temp/EditorBuildOutput/UnityLinkerToEditorData.json
+    role: json
+    id: 12
+    totalSize: 35778
+  - path: D:/UCIGithub/VerticalSlice/Temp/EditorBuildOutput/MethodMap.tsv
+    role: tsv
+    id: 13
+    totalSize: 20419128
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/csharpactions/webgl.data_qnm2.info
+    role: info
+    id: 14
+    totalSize: 1842
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/csharpactions/build.data.gz_domd.info
+    role: info
+    id: 15
+    totalSize: 432
+  - path: D:/UCIGithub/build/Build/build.data.gz
+    role: gz
+    id: 16
+    totalSize: 217527271
+  - path: D:/UCIGithub/VerticalSlice/Library/Bee/artifacts/WebGLbuild.loader.js
+    role: js
+    id: 17
+    totalSize: 20680
+  - path: D:/UCIGithub/build/Build/build.loader.js
+    role: js
+    id: 18
+    totalSize: 20680
+  - path: D:/UCIGithub/build/index.html
+    role: html
+    id: 19
+    totalSize: 5412
+  - path: D:/UCIGithub/build/TemplateData/favicon.ico
+    role: ico
+    id: 20
+    totalSize: 2305
+  - path: D:/UCIGithub/build/TemplateData/fullscreen-button.png
+    role: png
+    id: 21
+    totalSize: 175
+  - path: D:/UCIGithub/build/TemplateData/MemoryProfiler.png
+    role: png
+    id: 22
+    totalSize: 665
+  - path: D:/UCIGithub/build/TemplateData/progress-bar-empty-dark.png
+    role: png
+    id: 23
+    totalSize: 96
+  - path: D:/UCIGithub/build/TemplateData/progress-bar-empty-light.png
+    role: png
+    id: 24
+    totalSize: 109
+  - path: D:/UCIGithub/build/TemplateData/progress-bar-full-dark.png
+    role: png
+    id: 25
+    totalSize: 74
+  - path: D:/UCIGithub/build/TemplateData/progress-bar-full-light.png
+    role: png
+    id: 26
+    totalSize: 84
+  - path: D:/UCIGithub/build/TemplateData/style.css
+    role: css
+    id: 27
+    totalSize: 1428
+  - path: D:/UCIGithub/build/TemplateData/unity-logo-dark.png
+    role: png
+    id: 28
+    totalSize: 3042
+  - path: D:/UCIGithub/build/TemplateData/unity-logo-light.png
+    role: png
+    id: 29
+    totalSize: 3077
+  - path: D:/UCIGithub/build/TemplateData/webgl-logo.png
+    role: png
+    id: 30
+    totalSize: 2947
+  - path: D:/UCIGithub/build/TemplateData/webmemd-icon.png
+    role: png
+    id: 31
+    totalSize: 1670
+  m_BuildSteps:
+  - stepName: Build player
+    durationTicks: 894713151
+    depth: 0
+    messages: []
+  - stepName: Preprocess Player
+    durationTicks: 103984772
+    depth: 1
+    messages: []
+  - stepName: Prepare For Build
+    durationTicks: 2083
+    depth: 1
+    messages: []
+  - stepName: ProducePlayerScriptAssemblies
+    durationTicks: 332767383
+    depth: 1
+    messages: []
+  - stepName: Prebuild Cleanup and Recompile
+    durationTicks: 322204057
+    depth: 2
+    messages: []
+  - stepName: Compile scripts
+    durationTicks: 321732590
+    depth: 3
+    messages: []
+  - stepName: Generate and validate platform script types
+    durationTicks: 149873
+    depth: 3
+    messages: []
+  - stepName: Verify Build setup
+    durationTicks: 3161232
+    depth: 1
+    messages: []
+  - stepName: Check old data build
+    durationTicks: 2349065
+    depth: 2
+    messages: []
+  - stepName: Set up scripts only build
+    durationTicks: 685175
+    depth: 2
+    messages: []
+  - stepName: Prepare assets for target platform
+    durationTicks: 649078
+    depth: 1
+    messages: []
+  - stepName: Prepare splash screen
+    durationTicks: 10951
+    depth: 1
+    messages:
+    - type: 3
+      content: Including Unity Splash Screen logo because 'Show Unity Logo' is enabled.
+  - stepName: Run script only build
+    durationTicks: 1095604
+    depth: 1
+    messages: []
+  - stepName: Build scripts DLLs
+    durationTicks: 864788
+    depth: 2
+    messages: []
+  - stepName: GetReferencedAssemblies
+    durationTicks: 10057
+    depth: 3
+    messages: []
+  - stepName: Postprocess built player
+    durationTicks: 449168936
+    depth: 1
+    messages: []
+  - stepName: Setup incremental player build
+    durationTicks: 1364510
+    depth: 2
+    messages: []
+  - stepName: Incremental player build
+    durationTicks: 446829483
+    depth: 2
+    messages: []
+  - stepName: Report output files
+    durationTicks: 175398
+    depth: 2
+    messages: []
+  m_Appendices:
+  - {fileID: -7517040457263037204}
+  - {fileID: -7544777604763451314}
+  - {fileID: -6837845657692159032}
+  - {fileID: -1548040719384473070}
+  - {fileID: -8767050288273913235}
