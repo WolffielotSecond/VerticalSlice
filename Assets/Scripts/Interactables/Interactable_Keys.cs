@@ -19,6 +19,30 @@ public class Interactable_Keys : InteractableBase
     public string KeyName;
     public GameObject Key_Prefab;
 
+    private void Start()
+    {
+        switch (Type_Of_Key)
+        {
+            case KeyType.A:
+                if (GameInstanceHolder.instance.gameInstance.Key_A_Picked)
+                {
+                    Destroy(Key_Prefab);
+                }
+                break;
+            case KeyType.B:
+                if (GameInstanceHolder.instance.gameInstance.Key_B_Picked)
+                {
+                    Destroy(Key_Prefab);
+                }
+                break;
+            case KeyType.C:
+                if (GameInstanceHolder.instance.gameInstance.Key_C_Picked)
+                {
+                    Destroy(Key_Prefab);
+                }
+                break;
+        }
+    }
     public void On_Picked_Up()
     {
         Singleton.Instance._UI.GetComponent<UI>().pickupIcon.sprite = KeyIcon;

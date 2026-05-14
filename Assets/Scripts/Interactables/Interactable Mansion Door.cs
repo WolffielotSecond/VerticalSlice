@@ -30,6 +30,7 @@ public class InteractableMansionDoor : InteractableBase
                 case DoorSet.Room_A:
                     if (GameInstanceHolder.instance.gameInstance.Room_A_Unlocked)
                     {
+                        Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
                         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName, LoadSceneMode.Single);
                     }
                     else
@@ -40,12 +41,14 @@ public class InteractableMansionDoor : InteractableBase
                 case DoorSet.Room_B:
                     if (GameInstanceHolder.instance.gameInstance.Room_B_Unlocked)
                     {
+                        Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
                         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName, LoadSceneMode.Single);
                     }
                     break;
                 case DoorSet.Room_C:
                     if (GameInstanceHolder.instance.gameInstance.Room_C_Unlocked)
                     {
+                        Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
                         UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName, LoadSceneMode.Single);
                     }
                     break;
@@ -53,7 +56,7 @@ public class InteractableMansionDoor : InteractableBase
         }
         else
         {
-            //open new scene
+            Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
             UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneName, LoadSceneMode.Single);
         }
         

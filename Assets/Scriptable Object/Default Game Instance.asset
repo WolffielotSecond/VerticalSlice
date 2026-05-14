@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Game Instance
   m_EditorClassIdentifier: 
   CurrentExitRoom: 0
-  Room_A_Unlocked: 1
+  Room_A_Unlocked: 0
   Room_B_Unlocked: 0
   Room_C_Unlocked: 0
   Key_A_Picked: 1
@@ -22,7 +22,7 @@ MonoBehaviour:
   Game_Completed: 0
   hasHatchet: 0
   hasGun: 0
-  ammoLoaded: 78
-  ammoCarried: 91
+  ammoLoaded: 0
+  ammoCarried: 0
   medkitsCarried: 0
   Health: 100
