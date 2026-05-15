@@ -95,7 +95,8 @@ public class InteractableUnlockedDoorScript : InteractableBase
             case WhichDoor.B:
                 if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().RoomBUnlocked)
                 {
-                    Debug.Log("Entered Room B");
+                    Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Room B", LoadSceneMode.Single);
                     break;
                 }
                 else
@@ -114,7 +115,8 @@ public class InteractableUnlockedDoorScript : InteractableBase
             case WhichDoor.C:
                 if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().RoomCUnlocked)
                 {
-                    
+                    Singleton.Instance._player.GetComponent<Player_Stats_Handler>().loadStats();
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Room C", LoadSceneMode.Single);
                     break;
                 }
                 else

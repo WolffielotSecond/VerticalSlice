@@ -118,7 +118,14 @@ public class UI : MonoBehaviour
                 break;
             case WhichDoor.B:
                 Debug.Log("Door B");
-                Key1.SetActive(true);
+                if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasKeyA)
+                {
+                    Key1.SetActive(true);
+                }
+                else
+                {
+                    Key1.SetActive(false);
+                }
                 if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasKeyB)
                 {
                     Key2.SetActive(true);
@@ -131,8 +138,22 @@ public class UI : MonoBehaviour
                 break;
             case WhichDoor.C:
                 Debug.Log("Door C");
-                Key1.SetActive(true);
-                Key2.SetActive(true);
+                if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasKeyA)
+                {
+                    Key1.SetActive(true);
+                }
+                else
+                {
+                    Key1.SetActive(false);
+                }
+                if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasKeyB)
+                {
+                    Key2.SetActive(true);
+                }
+                else
+                {
+                    Key2.SetActive(false);
+                }
                 if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasKeyC)
                 {
                     Key3.SetActive(true);

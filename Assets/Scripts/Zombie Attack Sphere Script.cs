@@ -22,4 +22,21 @@ public class ZombieAttackSphereScript : MonoBehaviour
             Debug.Log("Leave");
         }
     }
+    private void Update()
+    {
+        Debug.Log((player_ref == null).ToString());
+    }
+
+    public bool ShouldAttack()
+    {
+        if (player_ref != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }

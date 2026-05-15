@@ -92,12 +92,12 @@ public class NewPlayer : MonoBehaviour
         bool newA = Input.GetKey(KeyCode.A);
         bool newS = Input.GetKey(KeyCode.S);
         bool newD = Input.GetKey(KeyCode.D);
-        bool anyKeyReleased =
-            (wHeld && !newW) ||
-            (aHeld && !newA) ||
-            (sHeld && !newS) ||
-            (dHeld && !newD);
-        if (hasPendingYaw && anyKeyReleased)
+        bool noMovementInput =
+            !newW &&
+            !newA &&
+            !newS &&
+            !newD;
+        if (hasPendingYaw && noMovementInput)
         {
             // 真正切换移动方向
             actionMoveYaw = pendingMoveYaw;
