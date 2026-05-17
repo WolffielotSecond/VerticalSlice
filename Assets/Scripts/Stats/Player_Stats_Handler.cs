@@ -22,6 +22,8 @@ public class Player_Stats_Handler : MonoBehaviour
     public bool RoomBUnlocked = false;
     public bool RoomCUnlocked = false;
 
+    public bool HasArtifact = false;
+
     public void loadStats()
     {
         GameInstanceHolder.instance.gameInstance.Health = Health;
@@ -36,6 +38,7 @@ public class Player_Stats_Handler : MonoBehaviour
         GameInstanceHolder.instance.gameInstance.Room_A_Unlocked = RoomAUnlocked;
         GameInstanceHolder.instance.gameInstance.Room_B_Unlocked = RoomBUnlocked;
         GameInstanceHolder.instance.gameInstance.Room_C_Unlocked = RoomCUnlocked;
+        GameInstanceHolder.instance.gameInstance.Game_Completed = HasArtifact;
     }
 
     public void loadStatsFromInstance()
@@ -52,6 +55,7 @@ public class Player_Stats_Handler : MonoBehaviour
         RoomAUnlocked = GameInstanceHolder.instance.gameInstance.Room_A_Unlocked;
         RoomBUnlocked = GameInstanceHolder.instance.gameInstance.Room_B_Unlocked;
         RoomCUnlocked = GameInstanceHolder.instance.gameInstance.Room_C_Unlocked;
+        HasArtifact = GameInstanceHolder.instance.gameInstance.Game_Completed;
     }
 
     private void Start()

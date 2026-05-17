@@ -84,6 +84,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
 
                     tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
                     tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(false);
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
                     Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
@@ -104,6 +105,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
                     Debug.Log("Interacted with Door B");
                     tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
                     tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(false);
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
                     Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
@@ -124,6 +126,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
                     Debug.Log("Interacted with Door C");
                     tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
                     tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(false);
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
                     Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
@@ -140,6 +143,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
     {
         Singleton.Instance._mainCamera.transform.position = tempPositionCamera;
         Singleton.Instance._mainCamera.transform.rotation = tempRotCamera;
+        Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(true);
     }
 
     

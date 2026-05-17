@@ -339,6 +339,7 @@ GameObject:
   m_Component:
   - component: {fileID: 127089514}
   - component: {fileID: 127089513}
+  - component: {fileID: 127089515}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -423,6 +424,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &127089515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127089512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &130130847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,6 +1605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469676968}
   - component: {fileID: 469676967}
+  - component: {fileID: 469676969}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -1665,6 +1690,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &469676969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469676966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &480885701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,6 +2853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782826035}
   - component: {fileID: 782826034}
+  - component: {fileID: 782826036}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -2889,6 +2938,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &782826036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782826033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &838044768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,7 +3021,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44350f43853ef294da0c7c4560afba6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3372,7 +3444,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44350f43853ef294da0c7c4560afba6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3477,7 +3549,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44350f43853ef294da0c7c4560afba6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3955,6 +4027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123795287}
   - component: {fileID: 1123795286}
+  - component: {fileID: 1123795288}
   m_Layer: 0
   m_Name: Point Light (4)
   m_TagString: Untagged
@@ -4039,6 +4112,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123795288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123795285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1150430215
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,6 +4846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1437862391}
   - component: {fileID: 1437862390}
+  - component: {fileID: 1437862392}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -4834,6 +4931,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1437862392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437862389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &1462039170
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,7 +5015,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44350f43853ef294da0c7c4560afba6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5398,7 +5518,7 @@ PrefabInstance:
     - target: {fileID: -9048329851562019442, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: -8679921383154817045, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2421336
@@ -5442,23 +5562,23 @@ PrefabInstance:
     - target: {fileID: -5097756051934661394, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: -4845106942009606727, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: -2721436552949770320, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: -2475914700897944392, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: -1047932555615329917, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 919132149155446097, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Name
       value: Interior Optimized
@@ -5466,35 +5586,35 @@ PrefabInstance:
     - target: {fileID: 1415832088092921694, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 1907012472582949997, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 2611422072114395280, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 3294704377593360830, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 5395063838350728145, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 5717935295287895160, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 6049344195451356983, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     - target: {fileID: 8583445615898695176, guid: 4dbb9fa51c2800f4084049ccd3fb1eaa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9462d55e3c8a15347a3941a3118a9bd6, type: 2}
+      objectReference: {fileID: 2100000, guid: e1418af015e4bbb4c9b8c68bcb18f185, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5560,7 +5680,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44350f43853ef294da0c7c4560afba6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6025,7 +6145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 44350f43853ef294da0c7c4560afba6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7011,6 +7131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2054818724}
   - component: {fileID: 2054818723}
+  - component: {fileID: 2054818725}
   m_Layer: 0
   m_Name: Point Light (3)
   m_TagString: Untagged
@@ -7095,6 +7216,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2054818725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054818722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &2069578704
 PrefabInstance:
   m_ObjectHideFlags: 0

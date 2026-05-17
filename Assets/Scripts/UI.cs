@@ -18,6 +18,7 @@ public class UI : MonoBehaviour
     public GameObject PistolIndicator;
     public TMP_Text Loaded_Ammo;
     public TMP_Text Carried_Ammo;
+    public TMP_Text Meds;
     public GameObject MainUI;
     [Space]
     [Header("Inventory")]
@@ -84,8 +85,9 @@ public class UI : MonoBehaviour
 
         HatchetIndicator.GetComponent<Image>().sprite = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasHatchet ? hasHatchet : NoHatchet;
         //    GameInstanceHolder.instance.gameInstance.hasHatchet ? hasHatchet : NoHatchet;
-        Loaded_Ammo.text = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().ammoLoaded.ToString();//GameInstanceHolder.instance.gameInstance.ammoLoaded.ToString();
+        Loaded_Ammo.text = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().ammoLoaded.ToString(); //GameInstanceHolder.instance.gameInstance.ammoLoaded.ToString();
         Carried_Ammo.text = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().ammo.ToString();//GameInstanceHolder.instance.gameInstance.ammoCarried.ToString();
+        Meds.text = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().medkits.ToString();
     }
     private void Start()
     {
@@ -245,6 +247,7 @@ public class UI : MonoBehaviour
 
     private void Update()
     {
+        SetStats();
         if (PickupMenuOpened && Input.GetKeyDown(KeyCode.Mouse0))
         {
             CloseMenu();
