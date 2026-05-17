@@ -88,9 +88,9 @@ public class InteractableUnlockedDoorScript : InteractableBase
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
                     Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
-                    Singleton.Instance._UI.GetComponent<UI>().OpenInteractionMenu();
                     Singleton.Instance._UI.GetComponent<UI>().doorType = WhichDoor.A;
                     Singleton.Instance._UI.GetComponent<UI>()._doorScript = this;
+                    Singleton.Instance._UI.GetComponent<UI>().OpenInteractionMenu();
                     break;
                 }
             case WhichDoor.B:
@@ -130,9 +130,9 @@ public class InteractableUnlockedDoorScript : InteractableBase
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
                     Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
-                    Singleton.Instance._UI.GetComponent<UI>().OpenInteractionMenu();
                     Singleton.Instance._UI.GetComponent<UI>().doorType = WhichDoor.C;
                     Singleton.Instance._UI.GetComponent<UI>()._doorScript = this;
+                    Singleton.Instance._UI.GetComponent<UI>().OpenInteractionMenu();
                     break;
                 }
 

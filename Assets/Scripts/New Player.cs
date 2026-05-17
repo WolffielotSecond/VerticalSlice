@@ -27,6 +27,7 @@ public class NewPlayer : MonoBehaviour
     private float kickTimer = 0f;
     private bool isKicking = false;
     public bool canKick = true;
+    private bool isAiming = false;
 
     [Space]
     [Header("No editing")]
@@ -143,7 +144,7 @@ public class NewPlayer : MonoBehaviour
             verticalInput *= -1;
             horizontalInput *= -1;
         }
-        if ((verticalInput != 0 || horizontalInput != 0) && isParrying == false && isKicking == false)
+        if ((verticalInput != 0 || horizontalInput != 0) && !isParrying && !isKicking && !isAiming)
         {
             _animator.SetBool("ShouldMove", true);
             //Debug.Log("Player is moving");
@@ -153,7 +154,7 @@ public class NewPlayer : MonoBehaviour
             _animator.SetBool("ShouldMove", false);
             //Debug.Log("Player is not moving");
         }
-        
+
         /*
         transform.Translate(new Vector3(horizontalInput, 0, verticalInput) * moveSpeed * Time.deltaTime);
         playerObj.transform.forward = new Vector3(horizontalInput, 0, verticalInput);
@@ -163,11 +164,11 @@ public class NewPlayer : MonoBehaviour
 
         // 防止斜向移动变快
         //moveDir = Vector3.ClampMagnitude(moveDir, 1f);
-        if (isParrying == false && isKicking == false)
+        if (!isParrying && !isKicking && !isAiming)
         {
             rb.MovePosition(transform.position + moveDir * moveSpeed * Time.fixedDeltaTime);
         }
-        
+
         //transform.Translate(moveDir * moveSpeed * Time.deltaTime, Space.World);
 
         if ((moveDir.sqrMagnitude > 0.001f) && isParrying == false && isKicking == false)
@@ -176,7 +177,7 @@ public class NewPlayer : MonoBehaviour
         }
 
         //Action
-        if (Input.GetKeyDown(KeyCode.Space) && isParrying == false)
+        if (Input.GetKeyDown(KeyCode.Space) && isParrying == false && this.gameObject.GetComponent<Player_Stats_Handler>().hasHatchet)
         {
             _animator.SetTrigger("Block");
             parrywindow = true;
@@ -205,7 +206,18 @@ public class NewPlayer : MonoBehaviour
                 Variables.Object(gameObject).Get<GameObject>("enemy ref").GetComponent<ZombieStatsRegulator>().TakeDamage(50);
             }
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1)/* && this.gameObject.GetComponent<Player_Stats_Handler>().hasPistol*/)
+        {
+            //_animator.SetTrigger("Aim");
+            isAiming = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            //_animator.SetTrigger("StopAim");
+            isAiming = false;
 
+
+        }
     }
 
     
