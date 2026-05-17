@@ -18,7 +18,42 @@ About the statemachine I used in the zombie AI. There are 5 different states cur
 
 
 ## Milestone 2 Devlog
-Milestone 2 Devlog goes here.
+
+### Q1. Scriptable Object for data storing and streaming between scenes.
+
+**Step one: Make the scriptable object**
+1. Create a scriptable object called Game Instance to store data like number of ammos, meds, keys picked, door unlocked and has hatchet or gun.
+2. Create a scriptable object holder called Game Instance Holder and make it an instance so that variables in the scriptable object can be modified by calling GameInstanceHolder.Instance.gameInstance
+3. Adding a function to reload the default data in the game instance called ResetData() because data stored in scriptable objects will persist between different play throughs.
+
+**Step two: Make a local data storage script to store the local changes made in the game and will only load data or save data at the start or end of each scene**
+1. Create a script called Player_Stats_Handler and make a copy of all the variables in the scriptable object
+2. Add a save function that loads all the data in Player_Stats_Handler to the scriptable object
+3. Add a load function that loads all the data in the scriptable object to Player_Stats_Handler
+
+**Step three: Implement the save and load system in the scene**
+1. Loads data on Awake
+2. If it's the first scene, we should clear the data on Awake and before loading the data to Player_Stats_Handler, so that we should modify in player settings and change the script execution order
+3. Saves data to Player_Stats_Handler when player unlocks a door or picks up an object.
+4. Saves data from Player_Stats_Handler to the game instance
+5. At Start(), the items in the scene and the door in the scene will read the data in the game instance. If the door is unlocked, the interaction prompt will change. If the item is picked, it will destroy itself.
+
+### Q2
+
+No, since I'm building a different feature than in W5, cuz I thought this mile stone has nothing to do with the activity in W5.
+
+Plus I always think when I'm coding, because I hardly know what I'm capable of when I'm not doing so. Also, I will make ambitious plans that will not be achieved easily. And I make breakdowns just for homeworks, so if there's really another time makeing them I'll improvise instead of learning from other breakdowns cuz all of them are all done after coding so that I'll be sure about what I'm doing.
+
+### Q3
+
+I call functions from C# scripts in visual scripting. Since visual scripting is always buggy and the same code in visual scripting will always have issues executing. Thus I make all of these buggy code to methods in C# and call these methods in the chunks where the buggy code has been. The graph is the Alert to Attack transition in the Zombie State Machine Graph, and the method is in the Zombie Attack Sphere Script.
+
+<img width="1309" height="691" alt="image" src="https://github.com/user-attachments/assets/116ff0cd-3dfb-49b6-80a0-f56f84b73d5e" />
+
+### Q4
+
+Just grade the things in the UI prefab in Prefabs folder and Interactable_Unlocked_Door, and the Interactable Key in the Prefabs>interactable Objects folder. I mainly wrote these. The key will pass information to the UI, and they will destroy themselves when they are picked according to the information in the Scriptable Object. The UI will also capture the screen and make it blurred when picking up an object. When interacting with a locked door, the camera will focus on the door and the widget will appear and the player can click on the correct key to unlock the correct door. When the door unlocks, a animation powered by an animator will play.
+
 ## Milestone 3 Devlog
 Milestone 3 Devlog goes here.
 ## Milestone 4 Devlog
