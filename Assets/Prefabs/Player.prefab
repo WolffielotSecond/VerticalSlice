@@ -219,6 +219,16 @@ MonoBehaviour:
   playerObj: {fileID: 4461654363721134325}
   _animator: {fileID: 6935833118941573173}
   canKick: 0
+  selectableLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  rayDistance: 100
+  drawGizmos: 1
+  gizmoSphereSize: 0.2
+  actionMoveYaw: 0
+  pendingMoveYaw: 0
+  hasPendingYaw: 0
+  isShooting: 0
 --- !u!54 &4494043843903818828
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -310,11 +320,16 @@ MonoBehaviour:
   Health: 100
   medkits: 0
   ammo: 0
+  ammoLoaded: 0
   hasPistol: 0
   hasHatchet: 0
   hasKeyA: 0
   hasKeyB: 0
   hasKeyC: 0
+  RoomAUnlocked: 0
+  RoomBUnlocked: 0
+  RoomCUnlocked: 0
+  HasArtifact: 0
 --- !u!1001 &3543086956594744740
 PrefabInstance:
   m_ObjectHideFlags: 0

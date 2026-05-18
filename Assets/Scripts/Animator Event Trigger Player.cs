@@ -9,4 +9,8 @@ public class AnimatorEventTrigger : MonoBehaviour
     {
         _cameraShake.StartCoroutine(_cameraShake.Shake(0.15f, 0.4f));
     }
+    public void IsntShooting()
+    {
+        Singleton.Instance._player.GetComponent<NewPlayer>().isShooting = false;
+    }
 }

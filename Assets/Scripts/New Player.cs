@@ -1,8 +1,9 @@
 using GLTFast.Schema;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
+using UnityEngine;
 
 public class NewPlayer : MonoBehaviour
 {
@@ -28,6 +29,18 @@ public class NewPlayer : MonoBehaviour
     private bool isKicking = false;
     public bool canKick = true;
     private bool isAiming = false;
+    private bool isCrouching = false;
+    private float normalSpeed;
+    private bool pendingStopAiming = false;
+
+    [Space]
+    [Header("Aim Ray Cast")]
+    public LayerMask selectableLayer;
+    public float rayDistance = 100f;
+    public bool drawGizmos = true;
+    public float gizmoSphereSize = 0.2f;
+    private Vector3 RaylastHitPoint;
+    private bool RayhasHit;
 
     [Space]
     [Header("No editing")]
@@ -35,7 +48,11 @@ public class NewPlayer : MonoBehaviour
     public float pendingMoveYaw;
     public bool hasPendingYaw;
     private bool wHeld, aHeld, sHeld, dHeld;
-
+    public bool isShooting = false;
+    private void Awake()
+    {
+        normalSpeed = moveSpeed;
+    }
     public bool GetParrying()
     {
         return parrywindow;
@@ -45,6 +62,7 @@ public class NewPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         //_animator = playerObj.GetComponent<Animator>();
         actionMoveYaw = Singleton.Instance._mainCamera.transform.eulerAngles.y;
+
     }
 
     public void DoCameraShake()
@@ -171,13 +189,13 @@ public class NewPlayer : MonoBehaviour
 
         //transform.Translate(moveDir * moveSpeed * Time.deltaTime, Space.World);
 
-        if ((moveDir.sqrMagnitude > 0.001f) && isParrying == false && isKicking == false)
+        if ((moveDir.sqrMagnitude > 0.001f) && isParrying == false && isKicking == false && !isAiming)
         {
             playerObj.transform.forward = moveDir;
         }
 
         //Action
-        if (Input.GetKeyDown(KeyCode.Space) && isParrying == false && this.gameObject.GetComponent<Player_Stats_Handler>().hasHatchet)
+        if (Input.GetKeyDown(KeyCode.Space) && isParrying == false && this.gameObject.GetComponent<Player_Stats_Handler>().hasHatchet && !isAiming)
         {
             _animator.SetTrigger("Block");
             parrywindow = true;
@@ -192,7 +210,7 @@ public class NewPlayer : MonoBehaviour
                 Debug.Log("Player is parrying and facing the enemy");
             }
         }
-        if (Input.GetKeyDown(KeyCode.F) && canKick && isKicking == false)
+        if (Input.GetKeyDown(KeyCode.F) && canKick && !isKicking && !isAiming)
         {
             _animator.SetTrigger("Kick");
             kickTimer = 0f;
@@ -208,18 +226,90 @@ public class NewPlayer : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse1)/* && this.gameObject.GetComponent<Player_Stats_Handler>().hasPistol*/)
         {
-            //_animator.SetTrigger("Aim");
+            _animator.SetBool("Aiming", true);
             isAiming = true;
+            isParrying = false;
+            isKicking = false;
+            pendingStopAiming = false;
+            if (isCrouching)
+            {
+                isCrouching = false;
+                _animator.SetBool("Is Crouching", false);
+                moveSpeed = normalSpeed;
+            }
+            
         }
         else if (Input.GetKeyUp(KeyCode.Mouse1))
         {
-            //_animator.SetTrigger("StopAim");
-            isAiming = false;
+            if (isShooting)
+            {
+                pendingStopAiming = true;
+            }
+            else
+            {
+                _animator.SetBool("Aiming", false);
+                isAiming = false;
+            }
+        }
+        if (pendingStopAiming && !isShooting)
+        {
+            pendingStopAiming = false;
+            _animator.SetBool("Aiming", false);
+            isAiming = false;    
+        }
+        if (Input.GetKeyDown(KeyCode.C) && !isAiming)
+        {
+            isCrouching = !isCrouching;
+            _animator.SetBool("Is Crouching", isCrouching);
+            if (isCrouching)
+            {
+                moveSpeed = normalSpeed * 0.75f;
+            }
+            else
+            {
+                moveSpeed = normalSpeed;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isAiming && !isShooting)
+        {
+            _animator.SetTrigger("Shoot");
+            isShooting = true;
+        }
+        if (isAiming)
+        {
+            FaceMousePoint();
+        }
+    }
+    
+    void FaceMousePoint()
+    {
+        Ray ray = Singleton.Instance._mainCamera.GetComponent<UnityEngine.Camera>().ScreenPointToRay(Input.mousePosition);
 
+        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance, selectableLayer))
+        {
+            RaylastHitPoint = hit.point;
+            RayhasHit = true;
 
+            Vector3 lookDir = hit.point - transform.position;
+
+            // 只保留水平旋转，防止模型抬头低头
+            lookDir.y = 0f;
+
+            if (lookDir.sqrMagnitude > 0.001f)
+            {
+                playerObj.transform.forward = lookDir.normalized;
+            }
         }
     }
 
-    
+    void OnDrawGizmos()
+    {
+        if (!drawGizmos || !RayhasHit)
+            return;
+
+        Gizmos.DrawSphere(RaylastHitPoint, gizmoSphereSize);
+        Gizmos.DrawLine(transform.position, RaylastHitPoint);
+    }
+
 
 }
