@@ -24,7 +24,7 @@ public class ZombieAttackSphereScript : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log((player_ref == null).ToString());
+        //Debug.Log((player_ref == null).ToString());
     }
 
     public bool ShouldAttack()

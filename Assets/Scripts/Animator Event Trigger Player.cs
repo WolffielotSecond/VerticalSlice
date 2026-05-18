@@ -13,4 +13,5 @@ public class AnimatorEventTrigger : MonoBehaviour
     {
         Singleton.Instance._player.GetComponent<NewPlayer>().isShooting = false;
     }
+
 }

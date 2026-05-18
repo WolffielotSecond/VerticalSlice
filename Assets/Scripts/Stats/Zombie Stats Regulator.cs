@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ZombieStatsRegulator : MonoBehaviour
+public class ZombieStatsRegulator : MonoBehaviour, IDamagable
 {
     [SerializeField] private float Health = 100;
     public static float MaxTenacity = 100;
@@ -15,6 +15,8 @@ public class ZombieStatsRegulator : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
     }
+
+
     public void CheckRemainingHealth()
     {
         //die
@@ -38,7 +40,14 @@ public class ZombieStatsRegulator : MonoBehaviour
     public void TakeDamage(float damage)
     {
         Health -= damage;
+        Variables.Object(gameObject).Set("Alertness", 30);
         CheckRemainingHealth();
+    }
+
+    public void DealDamage(float damage)
+    {
+        TakeDamage(damage);
+        ReduceTenacity(40);
     }
 
     public void ReduceTenacity(float tenacityReduction)

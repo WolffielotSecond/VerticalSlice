@@ -191,7 +191,15 @@ public class NewPlayer : MonoBehaviour
 
         if ((moveDir.sqrMagnitude > 0.001f) && isParrying == false && isKicking == false && !isAiming)
         {
-            playerObj.transform.forward = moveDir;
+            if (isCrouching)
+            {
+                // 先朝向 moveDir，再顺时针旋转45度
+                playerObj.transform.forward = Quaternion.Euler(0, 45f, 0) * moveDir;
+            }
+            else
+            {
+                playerObj.transform.forward = moveDir;
+            }
         }
 
         //Action
@@ -274,6 +282,7 @@ public class NewPlayer : MonoBehaviour
         {
             _animator.SetTrigger("Shoot");
             isShooting = true;
+            HasShotEnemy();
         }
         if (isAiming)
         {
@@ -298,6 +307,26 @@ public class NewPlayer : MonoBehaviour
             if (lookDir.sqrMagnitude > 0.001f)
             {
                 playerObj.transform.forward = lookDir.normalized;
+            }
+        }
+    }
+
+    public void HasShotEnemy()
+    {
+        Ray ray = Singleton.Instance._mainCamera.GetComponent<UnityEngine.Camera>().ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance, selectableLayer))
+        {
+            Debug.Log("Hit object: " + hit.collider.gameObject.name);
+            Debug.Log("Hit tag: " + hit.collider.gameObject.tag);
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                Debug.Log("Enemy Hit!");
+                IDamagable damageable = hit.collider.GetComponent<IDamagable>();
+
+                if (damageable != null)
+                {
+                    damageable.DealDamage(10);
+                }
             }
         }
     }
