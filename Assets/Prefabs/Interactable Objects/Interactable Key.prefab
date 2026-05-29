@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 0
   interactionText: {fileID: 9130669643484684645}
+  interactionkey: {fileID: 6991074669507375461}
   interactableName: 
   Type_Of_Key: 0
   KeyIcon: {fileID: 21300000, guid: 60778de4327ea2a4a938d9b500676e90, type: 3}
@@ -104,6 +105,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2674657164067700657, guid: 1ff91b6d4a3d98143a035d2aacf2ef9c, type: 3}
   m_PrefabInstance: {fileID: 643999486440313014}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6991074669507375461 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7632118409919521235, guid: 1ff91b6d4a3d98143a035d2aacf2ef9c, type: 3}
+  m_PrefabInstance: {fileID: 643999486440313014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9130669643484684645 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8527941604837159379, guid: 1ff91b6d4a3d98143a035d2aacf2ef9c, type: 3}

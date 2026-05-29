@@ -16,7 +16,8 @@ public class MainCamera : MonoBehaviour
     }
     public void Update()
     {
-        Heart_Mat.material.color = Color.Lerp(LowHealth, FullHealth, Singleton.Instance._player.GetComponent<Player_Stats_Handler>().Health / 100f);
+        Heart_Mat.material.SetColor("_Light_Color", Color.Lerp(LowHealth, FullHealth, Singleton.Instance._player.GetComponent<Player_Stats_Handler>().Health / 100f));
+        Debug.Log(Singleton.Instance._player.GetComponent<Player_Stats_Handler>().Health);
     }
 
     public void SetCameraPos(Transform cameraPos)

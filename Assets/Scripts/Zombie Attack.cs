@@ -24,7 +24,7 @@ public class ZombieAttack : MonoBehaviour
         {
             if (attackSphere.player_ref != null)
             {
-                Debug.Log("Player hit!");
+                Singleton.Instance._player.GetComponent<Player_Stats_Handler>().TakeDamage(20);
             }
         }
     }

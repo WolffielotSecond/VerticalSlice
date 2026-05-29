@@ -58,6 +58,41 @@ public class Player_Stats_Handler : MonoBehaviour
         HasArtifact = GameInstanceHolder.instance.gameInstance.Game_Completed;
     }
 
+    public void TakeDamage(float damage)
+    {
+        Health -= damage;
+        if (Health <= 0)
+        {
+            Health = 0;
+            Singleton.Instance._UI.GetComponent<UI>().DeathScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    private void Update()
+    {
+        if (Health == 20 && medkits != 0)
+        {
+            Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("Press Q to Heal");
+        }
+        if (medkits > 0 && Input.GetKeyDown(KeyCode.Q))
+        {
+            if (Health < 100)
+            {
+                Health += 20;
+                medkits -= 1;
+            }
+            else
+            {
+                Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("Health is Full");
+            }
+        }
+        else if (medkits <= 0 && Input.GetKeyDown(KeyCode.Q))
+        {
+            Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("No Med Kits Left");
+        }
+    }
+
     private void Start()
     {
         loadStatsFromInstance();

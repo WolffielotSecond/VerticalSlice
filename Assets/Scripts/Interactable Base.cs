@@ -15,6 +15,7 @@ public class InteractableBase : MonoBehaviour, InteractableInterface
     }
     [SerializeField] private InteractableType _type;
     public TextMeshPro interactionText;
+    public TextMeshPro interactionkey;
     private string _InteractionName => _type switch
     {
         InteractableType.Item => "Pick Up",
@@ -37,6 +38,7 @@ public class InteractableBase : MonoBehaviour, InteractableInterface
         _collider = GetComponent<Collider>();
         interactionText.SetText(interactType);
         interactionText.enabled = false;
+        interactionkey.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +47,7 @@ public class InteractableBase : MonoBehaviour, InteractableInterface
         {
             other.GetComponent<InteractionRelated>().setCurrentInteractable(this);
             interactionText.enabled = true;
+            interactionkey.enabled = true;
             Debug.Log("Enter");
         }
     }
@@ -54,6 +57,7 @@ public class InteractableBase : MonoBehaviour, InteractableInterface
         {
             other.GetComponent<InteractionRelated>().clearCurrentInteractable();
             interactionText.enabled = false;
+            interactionkey.enabled = false;
             Debug.Log("Exit");
         }
     }

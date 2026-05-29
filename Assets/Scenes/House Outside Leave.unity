@@ -2113,7 +2113,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3929,6 +3929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable Mansion Door
       objectReference: {fileID: 0}
+    - target: {fileID: 8881564460066193100, guid: bba1e858919cd4348b6b6d4cba83c6a4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.174
+      objectReference: {fileID: 0}
     - target: {fileID: 8883572676796040434, guid: bba1e858919cd4348b6b6d4cba83c6a4, type: 3}
       propertyPath: _sceneName
       value: House Interior
@@ -3978,6 +3982,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 749591782391103748, guid: bba1e858919cd4348b6b6d4cba83c6a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8940749014564583018, guid: bba1e858919cd4348b6b6d4cba83c6a4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: bba1e858919cd4348b6b6d4cba83c6a4, type: 3}
@@ -5443,6 +5450,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1828945045729245669, guid: 466f7315c5332284cb0333133acf9aa0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2261664865372113348, guid: 466f7315c5332284cb0333133acf9aa0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.109998
@@ -5492,6 +5503,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7513980846897169965, guid: 466f7315c5332284cb0333133acf9aa0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2176359976264003907, guid: 466f7315c5332284cb0333133acf9aa0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 466f7315c5332284cb0333133acf9aa0, type: 3}

@@ -78,7 +78,9 @@ public class Interactable_Items : InteractableBase
             case ItemType.Artifact:
 
                 Singleton.Instance._player.GetComponent<Player_Stats_Handler>().HasArtifact = true;
+                
                 On_Picked_Up();
+                Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("Item aquired, you can now return to base");
                 break;
             case ItemType.Hatchet:
 
@@ -102,11 +104,12 @@ public class Interactable_Items : InteractableBase
             case ItemType.Return_To_Base:
                 if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().HasArtifact)
                 {
-                    Debug.Log("You have returned to base with the artifact! You win!");
+                    Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
+                    Singleton.Instance._UI.GetComponent<UI>().WinScreen.SetActive(true);
                 }
                 else
                 {
-                    Debug.Log("You need the artifact to return to base!");  
+                    Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("You need the retrieve the camera to return to base!");
                 }
                 break;
         }

@@ -217,7 +217,7 @@ MonoBehaviour:
   Health: {fileID: 229757504248178785}
   FullHealth: {r: 0.09867966, g: 1, b: 0, a: 0}
   LowHealth: {r: 1, g: 0, b: 0, a: 0}
-  Heart_Mat: {fileID: 0}
+  Heart_Mat: {fileID: 947473718829602146}
 --- !u!114 &8754128845987596781
 MonoBehaviour:
   m_ObjectHideFlags: 0

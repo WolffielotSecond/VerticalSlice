@@ -18,7 +18,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
 
     public GameObject _key;
     public Transform CameraLocation;
-
+    public GameObject Glow;
     private float timer = 0;
     private bool playAnimation = false;
    
@@ -30,6 +30,8 @@ public class InteractableUnlockedDoorScript : InteractableBase
     private Quaternion tempRotCamera;
     private void Start()
     {
+        tempPositionCamera = Singleton.Instance._RoomA_Cam_Location.position;
+        tempRotCamera = Singleton.Instance._RoomA_Cam_Location.rotation;
         _key.SetActive(false);
         switch (_doortype)
         {
@@ -82,8 +84,9 @@ public class InteractableUnlockedDoorScript : InteractableBase
                 {
                     Debug.Log("Interacted with Door A");
 
-                    tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
-                    tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    //tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
+                    //tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    Glow.SetActive(false);
                     Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(false);
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
@@ -103,8 +106,9 @@ public class InteractableUnlockedDoorScript : InteractableBase
                 else
                 {
                     Debug.Log("Interacted with Door B");
-                    tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
-                    tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    //tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
+                    //tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    Glow.SetActive(false);
                     Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(false);
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
@@ -124,8 +128,9 @@ public class InteractableUnlockedDoorScript : InteractableBase
                 else
                 {
                     Debug.Log("Interacted with Door C");
-                    tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
-                    tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    //tempPositionCamera = Singleton.Instance._mainCamera.transform.position;
+                    //tempRotCamera = Singleton.Instance._mainCamera.transform.rotation;
+                    Glow.SetActive(false);
                     Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(false);
                     Singleton.Instance._mainCamera.transform.position = CameraLocation.position;
                     Singleton.Instance._mainCamera.transform.rotation = CameraLocation.rotation;
@@ -141,6 +146,7 @@ public class InteractableUnlockedDoorScript : InteractableBase
     }
     public void CameraReturnLocation()
     {
+        Glow.SetActive(true);
         Singleton.Instance._mainCamera.transform.position = tempPositionCamera;
         Singleton.Instance._mainCamera.transform.rotation = tempRotCamera;
         Singleton.Instance._mainCamera.GetComponent<MainCamera>().Health.SetActive(true);

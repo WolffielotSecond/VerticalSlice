@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; 
 
 public class UI : MonoBehaviour
@@ -39,6 +40,14 @@ public class UI : MonoBehaviour
     public Image pickupIcon;
     public TMP_Text pickupItemName;
     private Texture2D screenshot;
+    [Space]
+    [Header("Win and Death")]
+    public GameObject WinScreen;
+    public GameObject DeathScreen;
+    [Space]
+    [Header("General Prompt")]
+    public GameObject prompt;
+    public TMP_Text promptText;
     [Space]
     [Header("No Editing")]
     public GameObject Key;
@@ -196,10 +205,10 @@ public class UI : MonoBehaviour
                 }
                 break;
             case WhichDoor.B:
-                Debug.Log("Wrong Key");
+                PlayPrompt("Wrong Key");
                 break;
             case WhichDoor.C:
-                Debug.Log("Wrong Key");
+                PlayPrompt("Wrong Key");
                 break;
         }
     }
@@ -222,7 +231,7 @@ public class UI : MonoBehaviour
                 }
                 break;
             case WhichDoor.C:
-                Debug.Log("Wrong Key");
+                PlayPrompt("Wrong Key");
                 break;
         }
     }
@@ -245,8 +254,35 @@ public class UI : MonoBehaviour
            InteractionMenuOpened = false;
     }
 
+    //play prompt
+
+    private float promptTimer = 0f;
+    private bool promptActive = false;
+    public void PlayPrompt(string text)
+    {
+        promptText.text = text;
+        prompt.SetActive(true);
+        promptTimer = 0f;
+        promptActive = true;
+    }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("House Outside", LoadSceneMode.Single);
+    }
+
     private void Update()
     {
+        if (promptActive)
+        {
+            promptTimer += Time.deltaTime;
+            if (promptTimer > 2f)
+            {
+                prompt.SetActive(false);
+                promptActive = false;
+            }
+        }
         SetStats();
         if (PickupMenuOpened && Input.GetKeyDown(KeyCode.Mouse0))
         {
