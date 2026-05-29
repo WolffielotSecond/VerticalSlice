@@ -71,7 +71,7 @@ I've also added a 'E' interaction key prompt at interaction location and a glowi
 
 I've also added the final objective quest item so that the game can be completed. 
 
-I've also fully implemented the gun shooting mechanic into the game.
+I've also implemented a health and die system in game.
 
 ### Q3
 
