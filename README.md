@@ -55,7 +55,30 @@ I call functions from C# scripts in visual scripting. Since visual scripting is 
 Just grade the things in the UI prefab in Prefabs folder and Interactable_Unlocked_Door, and the Interactable Key in the Prefabs>interactable Objects folder. I mainly wrote these. The key will pass information to the UI, and they will destroy themselves when they are picked according to the information in the Scriptable Object. The UI will also capture the screen and make it blurred when picking up an object. When interacting with a locked door, the camera will focus on the door and the widget will appear and the player can click on the correct key to unlock the correct door. When the door unlocks, a animation powered by an animator will play.
 
 ## Milestone 3 Devlog
-Milestone 3 Devlog goes here.
+
+### Q1
+I've added several shader graphs this time and I will pick one
+<img width="2073" height="1201" alt="image" src="https://github.com/user-attachments/assets/6b8dfd2d-801c-4b38-9431-b185ed8a1087" />
+The material uses an Unlit shader with Transparent Surface Type and Additive Blending, which causes the beam to glow without being affected by scene lighting. The shader uses the Position node in Object Space to access the mesh's local vertex coordinates. The Y component of the Position is extracted using a Split node and passed through a Remap node. This converts the object's height into a value ranging from fully opaque at the bottom to fully transparent at the top. A Saturate node clamps the result between 0 and 1, and a Power node is used to control the falloff of the gradient, creating a smoother fade. To make the beam appear alive, the shader generates procedural noise using the Gradient Noise node. The UV coordinates for the noise are created from the object's local position. A Time node is multiplied by a speed value and connected to a Tiling And Offset node, causing the noise pattern to continuously move upward over time. This animated noise is multiplied with the vertical transparency gradient to make sure that the alpha is animated. The final alpha value is connected to the material's transparency, while an orange HDR color is connected to the Base Color output. As a result, the shader produces a glowing orange pillar that is brightest and most opaque near the bottom, gradually fades toward the top, creating an effect similar to the effect of the pick-up-ables in Nier: Automata.
+
+You can find the shader anywhere in game where there's an interaction point.
+<img width="808" height="679" alt="image" src="https://github.com/user-attachments/assets/946e3782-e83c-4bb3-9e6e-073147de3dc9" />
+
+### Q2
+I've improved the camera transition logic so that there's less bugs when the player move between camera switch locations.
+
+I've also added a 'E' interaction key prompt at interaction location and a glowing tube to indicate the player where to interact and how to interact.
+
+I've also added the final objective quest item so that the game can be completed. 
+
+I've also fully implemented the gun shooting mechanic into the game.
+
+### Q3
+
+You can find things in the Shaders folder where they are for the materials I've created for the game. (To avoid importing models and save project space)
+
+The other new stuff are in the prefabs-interactable objects folder where I added new interactable object prefabs.
+
 ## Milestone 4 Devlog
 Milestone 4 Devlog goes here.
 ## Final Devlog
