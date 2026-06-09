@@ -41,6 +41,7 @@ public class NewPlayer : MonoBehaviour
     public float gizmoSphereSize = 0.2f;
     private Vector3 RaylastHitPoint;
     private bool RayhasHit;
+    public GameObject BloodPrefab;
 
     [Space]
     [Header("No editing")]
@@ -49,6 +50,8 @@ public class NewPlayer : MonoBehaviour
     public bool hasPendingYaw;
     private bool wHeld, aHeld, sHeld, dHeld;
     public bool isShooting = false;
+    private bool isReloading = false;
+    private float reloadTimer = 0f;
     private void Awake()
     {
         normalSpeed = moveSpeed;
@@ -73,6 +76,21 @@ public class NewPlayer : MonoBehaviour
     public void SetCanKick(bool value)
     {
         canKick = value;
+    }
+
+    public void ReloadAmmo()
+    {
+        int ammoNeeded = 6 - this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded;
+        if (this.gameObject.GetComponent<Player_Stats_Handler>().ammo >= ammoNeeded)
+        {
+            this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded += (int)ammoNeeded;
+            this.gameObject.GetComponent<Player_Stats_Handler>().ammo -= (int)ammoNeeded;
+        }
+        else
+        {
+            this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded += this.gameObject.GetComponent<Player_Stats_Handler>().ammo;
+            this.gameObject.GetComponent<Player_Stats_Handler>().ammo = 0;
+        }
     }
 
     void Update()
@@ -104,6 +122,16 @@ public class NewPlayer : MonoBehaviour
         else
         {
             _animator.applyRootMotion = false;
+        }
+        if (isReloading)
+        {
+            
+            reloadTimer -= Time.deltaTime;
+            if (reloadTimer <= 0f)
+            {
+                isReloading = false;
+                ReloadAmmo();
+            }
         }
         //获取现在相机的朝向
         pendingMoveYaw = Singleton.Instance._mainCamera.transform.eulerAngles.y;
@@ -232,8 +260,9 @@ public class NewPlayer : MonoBehaviour
                 Variables.Object(gameObject).Get<GameObject>("enemy ref").GetComponent<ZombieStatsRegulator>().TakeDamage(50);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Mouse1)/* && this.gameObject.GetComponent<Player_Stats_Handler>().hasPistol*/)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && this.gameObject.GetComponent<Player_Stats_Handler>().hasPistol)
         {
+            Singleton.Instance._UI.GetComponent<UI>().AimShootText.text = "LMB to Shoot";
             _animator.SetBool("Aiming", true);
             isAiming = true;
             isParrying = false;
@@ -247,9 +276,10 @@ public class NewPlayer : MonoBehaviour
             }
             
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        else if (Input.GetKeyUp(KeyCode.Mouse1) && this.gameObject.GetComponent<Player_Stats_Handler>().hasPistol)
         {
-            if (isShooting)
+            Singleton.Instance._UI.GetComponent<UI>().AimShootText.text = "RMB to Aim";
+            if (isShooting || isReloading)
             {
                 pendingStopAiming = true;
             }
@@ -259,7 +289,7 @@ public class NewPlayer : MonoBehaviour
                 isAiming = false;
             }
         }
-        if (pendingStopAiming && !isShooting)
+        if (pendingStopAiming && !isShooting && !isReloading)
         {
             pendingStopAiming = false;
             _animator.SetBool("Aiming", false);
@@ -278,19 +308,41 @@ public class NewPlayer : MonoBehaviour
                 moveSpeed = normalSpeed;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && isAiming && !isShooting)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isAiming && !isShooting && this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded != 0)
         {
+            this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded -= 1;
             _animator.SetTrigger("Shoot");
             isShooting = true;
             HasShotEnemy();
         }
+        if (Input.GetKeyDown(KeyCode.R) && isAiming && !isReloading && this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded < 6 && this.gameObject.GetComponent<Player_Stats_Handler>().ammo > 0)
+        {
+            Singleton.Instance._UI.GetComponent<UI>().ReloadPrompt("Reloading . . .");
+            isReloading = true;
+            reloadTimer = 1.0f; // 设置重新装填的时间
+        } else if (Input.GetKeyDown(KeyCode.R) && isAiming && !isReloading && this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded == 6)
+        {
+            Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("Mag is Full!");
+        }
+         else if (Input.GetKeyDown(KeyCode.R) && isAiming && !isReloading && this.gameObject.GetComponent<Player_Stats_Handler>().ammo == 0)
+        {
+            Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("No Ammo Left to Reload!");
+        }
         if (isAiming)
         {
             FaceMousePoint();
+            if (this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded == 0 && this.gameObject.GetComponent<Player_Stats_Handler>().ammo != 0 && !isReloading)
+            {
+                Singleton.Instance._UI.GetComponent<UI>().instantPrompt("Out of Ammo! Press R to Reload");
+            }
+            else if (this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded == 0 && this.gameObject.GetComponent<Player_Stats_Handler>().ammo == 0 && !isReloading)
+            {
+                Singleton.Instance._UI.GetComponent<UI>().instantPrompt("No Ammo Left!");
+            }
         }
     }
     
-    void FaceMousePoint()
+    public void FaceMousePoint()
     {
         Ray ray = Singleton.Instance._mainCamera.GetComponent<UnityEngine.Camera>().ScreenPointToRay(Input.mousePosition);
 
@@ -320,6 +372,7 @@ public class NewPlayer : MonoBehaviour
             Debug.Log("Hit tag: " + hit.collider.gameObject.tag);
             if (hit.collider.CompareTag("Enemy"))
             {
+                
                 Debug.Log("Enemy Hit!");
                 IDamagable damageable = hit.collider.GetComponent<IDamagable>();
 
@@ -327,6 +380,8 @@ public class NewPlayer : MonoBehaviour
                 {
                     damageable.DealDamage(10);
                 }
+                Quaternion rot = (this.gameObject.transform.rotation);
+                Instantiate(BloodPrefab, hit.point, rot);
             }
         }
     }

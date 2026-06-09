@@ -24,6 +24,20 @@ public class Player_Stats_Handler : MonoBehaviour
 
     public bool HasArtifact = false;
 
+    [Space]
+    [Header("Material References")]
+    [SerializeField] private Material ScreenEffectMat;
+
+    public void Screen_Effect(float percentage)
+    {
+        
+        percentage = Mathf.Clamp01(percentage);
+
+        float intensity = (1f - percentage) * 0.7f;
+
+        ScreenEffectMat.SetFloat("_Intensity", intensity);
+        
+    }
     public void loadStats()
     {
         GameInstanceHolder.instance.gameInstance.Health = Health;
@@ -71,6 +85,7 @@ public class Player_Stats_Handler : MonoBehaviour
 
     private void Update()
     {
+        Screen_Effect(Health / 100f);
         if (Health == 20 && medkits != 0)
         {
             Singleton.Instance._UI.GetComponent<UI>().PlayPrompt("Press Q to Heal");

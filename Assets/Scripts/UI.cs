@@ -21,6 +21,8 @@ public class UI : MonoBehaviour
     public TMP_Text Carried_Ammo;
     public TMP_Text Meds;
     public GameObject MainUI;
+    public TMP_Text ParryText;
+    public TMP_Text AimShootText;
     [Space]
     [Header("Inventory")]
     public GameObject InventoryPanel;
@@ -91,7 +93,8 @@ public class UI : MonoBehaviour
     {
         PistolIndicator.GetComponent<Image>().sprite = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasPistol ? hasPistol : NoPistol;
         //       GameInstanceHolder.instance.gameInstance.hasGun ? hasPistol : NoPistol;
-
+        ParryText.enabled = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasHatchet;
+        AimShootText.enabled = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasPistol;
         HatchetIndicator.GetComponent<Image>().sprite = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().hasHatchet ? hasHatchet : NoHatchet;
         //    GameInstanceHolder.instance.gameInstance.hasHatchet ? hasHatchet : NoHatchet;
         Loaded_Ammo.text = Singleton.Instance._player.GetComponent<Player_Stats_Handler>().ammoLoaded.ToString(); //GameInstanceHolder.instance.gameInstance.ammoLoaded.ToString();
@@ -256,13 +259,28 @@ public class UI : MonoBehaviour
 
     //play prompt
 
-    private float promptTimer = 0f;
+    private float promptTimer = 2f;
     private bool promptActive = false;
     public void PlayPrompt(string text)
     {
         promptText.text = text;
         prompt.SetActive(true);
-        promptTimer = 0f;
+        promptTimer = 2f;
+        promptActive = true;
+    }
+
+    public void ReloadPrompt(string text)
+    {
+        promptText.text = text;
+        prompt.SetActive(true);
+        promptTimer = 1f;
+        promptActive = true;
+    }
+    public void instantPrompt(string text)
+    {
+        promptText.text = text;
+        prompt.SetActive(true);
+        promptTimer = 0.1f;
         promptActive = true;
     }
 
@@ -272,12 +290,13 @@ public class UI : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("House Outside", LoadSceneMode.Single);
     }
 
+    
     private void Update()
     {
         if (promptActive)
         {
-            promptTimer += Time.deltaTime;
-            if (promptTimer > 2f)
+            promptTimer -= Time.deltaTime;
+            if (promptTimer <= 0f)
             {
                 prompt.SetActive(false);
                 promptActive = false;

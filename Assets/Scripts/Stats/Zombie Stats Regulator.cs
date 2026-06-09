@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,6 +9,9 @@ public class ZombieStatsRegulator : MonoBehaviour, IDamagable
 {
     [SerializeField] private float Health = 100;
     public static float MaxTenacity = 100;
+    public TextMeshPro MeleePrompt;
+    public GameObject MeleeIndicator;
+    public GameObject MeleeWholeGameObject;
     private float Tenacity = MaxTenacity;
     [Header("不用编辑")]
     public Animator _animator;
@@ -16,6 +20,42 @@ public class ZombieStatsRegulator : MonoBehaviour, IDamagable
         _animator = GetComponent<Animator>();
     }
 
+    public void Update()
+    {
+        if (Singleton.Instance._mainCamera != null)
+        {
+            Transform cam = Singleton.Instance._mainCamera.transform;
+
+            // 算出目标旋转
+            Quaternion targetRot = Quaternion.LookRotation(
+                cam.rotation * Vector3.forward,
+                cam.rotation * Vector3.up
+            );
+
+            // X轴补90度
+            targetRot *= Quaternion.Euler(0f, 0f, 0f);
+
+            // 应用
+            MeleeWholeGameObject.transform.rotation = targetRot;
+        }
+        if (Variables.Object(gameObject).Get<bool>("IsStunned"))
+        {
+            if (Singleton.Instance._player.GetComponent<NewPlayer>().canKick)
+            {
+                MeleePrompt.text = "F to Melee";
+            }
+            else
+            {
+                MeleePrompt.text = "Too Far Away";
+            }
+                MeleeIndicator.SetActive(true);
+        }
+        else
+        {
+            MeleePrompt.text = "";
+            MeleeIndicator.SetActive(false);
+        }
+    }
 
     public void CheckRemainingHealth()
     {
@@ -26,7 +66,7 @@ public class ZombieStatsRegulator : MonoBehaviour, IDamagable
             // 然后调用 Set 方法设置键值对。
             // 这里把敌人引用清空，使用 Singleton 中的 _player 对象作为目标。
             Variables.Object(Singleton.Instance._player).Set("enemy ref", null);
-
+            MeleeWholeGameObject.SetActive(false);
             GetComponent<NavMeshAgent>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<Collider>().enabled = false;

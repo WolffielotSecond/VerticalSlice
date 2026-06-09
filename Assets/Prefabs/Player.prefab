@@ -225,6 +225,7 @@ MonoBehaviour:
   rayDistance: 100
   drawGizmos: 1
   gizmoSphereSize: 0.2
+  BloodPrefab: {fileID: 2812065300797445736, guid: d87cfc0abfeccb940bc06c92a85eba6f, type: 3}
   actionMoveYaw: 0
   pendingMoveYaw: 0
   hasPendingYaw: 0
@@ -330,6 +331,7 @@ MonoBehaviour:
   RoomBUnlocked: 0
   RoomCUnlocked: 0
   HasArtifact: 0
+  ScreenEffectMat: {fileID: 2100000, guid: 27668b6df3811df429bf62ea43307469, type: 2}
 --- !u!1001 &3543086956594744740
 PrefabInstance:
   m_ObjectHideFlags: 0
