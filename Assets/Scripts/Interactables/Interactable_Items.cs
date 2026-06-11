@@ -104,7 +104,7 @@ public class Interactable_Items : InteractableBase
             case ItemType.Return_To_Base:
                 if (Singleton.Instance._player.GetComponent<Player_Stats_Handler>().HasArtifact)
                 {
-                    Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
+                    Singleton.Instance._player.SetActive(false);
                     Singleton.Instance._UI.GetComponent<UI>().WinScreen.SetActive(true);
                     Singleton.Instance._UI.GetComponent<UI>().audioSource.clip = Singleton.Instance._UI.GetComponent<UI>().Win_sfx;
                     Singleton.Instance._UI.GetComponent<UI>().audioSource.pitch = 1f;

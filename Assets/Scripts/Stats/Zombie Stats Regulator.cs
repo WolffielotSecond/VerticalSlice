@@ -109,6 +109,7 @@ public class ZombieStatsRegulator : MonoBehaviour, IDamagable
     }
     public void DeathAudio()
     {
+        this.gameObject.GetComponent<ZombieSounds>().enabled = false;
         audioSource.clip = Death_sfx;
         audioSource.pitch = 1.5f;
         audioSource.Play();

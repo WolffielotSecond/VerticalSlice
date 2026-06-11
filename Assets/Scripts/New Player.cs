@@ -266,7 +266,7 @@ public class NewPlayer : MonoBehaviour
                 //face the enemy when parrying
                 playerObj.transform.LookAt(Variables.Object(gameObject).Get<GameObject>("enemy ref").transform);
                 Debug.Log("Player is parrying and facing the enemy");
-                Variables.Object(gameObject).Get<GameObject>("enemy ref").GetComponent<ZombieStatsRegulator>().TakeDamage(50);
+                
             }
         }
         if (Input.GetKeyDown(KeyCode.Mouse1) && this.gameObject.GetComponent<Player_Stats_Handler>().hasPistol)
@@ -402,7 +402,10 @@ public class NewPlayer : MonoBehaviour
             }
         }
     }
-
+    public void kick_enemy_damage()
+    {
+        Variables.Object(gameObject).Get<GameObject>("enemy ref").GetComponent<ZombieStatsRegulator>().TakeDamage(50);
+    }
     void OnDrawGizmos()
     {
         if (!drawGizmos || !RayhasHit)
