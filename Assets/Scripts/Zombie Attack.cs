@@ -18,6 +18,7 @@ public class ZombieAttack : MonoBehaviour
         if (Singleton.Instance._player.GetComponent<NewPlayer>().GetParrying())
         {
             Singleton.Instance._UI.GetComponent<UI>().audioSource.clip = Singleton.Instance._UI.GetComponent<UI>().Parry_sfx;
+            Singleton.Instance._UI.GetComponent<UI>().audioSource.pitch = 1f;
             Singleton.Instance._UI.GetComponent<UI>().audioSource.Play();
             GetComponent<ZombieStatsRegulator>().ReduceTenacity(100);
             Singleton.Instance._player.GetComponent<NewPlayer>().DoCameraShake();

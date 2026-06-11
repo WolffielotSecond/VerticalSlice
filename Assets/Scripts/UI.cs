@@ -90,7 +90,7 @@ public class UI : MonoBehaviour
     public void OpenMenu()
     {
         StartCoroutine(CaptureScreen());
-        originalPos = new Vector3(0, 90, 0);//pickupIcon.gameObject.transform.position;
+        originalPos = new Vector3(0, 114, 0);//pickupIcon.gameObject.transform.position;
     }
     public void CloseMenu()
     {
