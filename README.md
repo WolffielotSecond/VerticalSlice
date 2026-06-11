@@ -87,15 +87,17 @@ The core game loop is to find corresponding keys to unlock corresponding doors a
 
 ### Q2
 
-The Electrocardiogram in Assets>Materials>Health>Heart_URP_Graph
+The shader can be found in Assets>Shaders>Shader_ScreenRed
 
-<img width="2559" height="1462" alt="image" src="https://github.com/user-attachments/assets/5a2a94fe-708c-425b-b125-649e1a7e5890" />
+The code can be found in Assets>Scripts>Stats>Player_Stats_Handler
 
-It is modified in Main Camera.cs from Assets>Scripts and the diagram changes color according to the current health of the player
+<img width="2559" height="1396" alt="屏幕截图 2026-06-11 091105" src="https://github.com/user-attachments/assets/3e3aa984-3775-451f-98f4-1e74d0038a66" />
 
-<img width="1900" height="921" alt="image" src="https://github.com/user-attachments/assets/675b363e-a21c-436b-9b02-c464d3d398bf" />
+In the shader, the Intensity parameter is used to control the strength of the screen effect. Because it's a fullscreen material, it will be activated in the URP_Render>Full Screen Pass Renderer Feature.
 
-The electrocardiogram is relized by: First multiplying time to a speed value to determine the animation speed, after that add a one minus to make final effect go from left to right instead of the inverse direction. After making the dynamic float value, combine it with a combine node to convert it into a Vector 2D where only the X value changes. This Vector 2D is then connected to the offset to the Tiling and Offset node so that the texture will move from left to right. After that connect the output value to the UV of a gradient texture that I created for the effect so that a gradient of from black to white will move from left to right continuously. After that multiplying the animated texture to a black and white texture of the Electrocardiogram so that a decolorized electrocardiogram will be made. Then connect this to a lerp node to determine the actual color of the black regions and lit (white and gray) regions of the image. The background color, BG Color, will be black and the color for the lit areas, Light Color, will be from changed in code. I've stored 2 colors, green and red and the actual color will lerp through these two values according to the current health percentage.
+<img width="1851" height="918" alt="屏幕截图 2026-06-11 091245" src="https://github.com/user-attachments/assets/882842da-46aa-41e7-a287-5271947e2268" />
+
+Thus, in the code, I'll only have to change the parameters in the material to activate the effect. In the method Screen_Effect, the health percentage will be passed into the method and it will be converted into the intensity value by using the formula (1-percentage)x0.7 so that when Health is full, the effect intensity will be zero, and when Health is 0, the intensity will be 0.7. The method is called every frame in the Update() function.
 
 ### Q3
 
