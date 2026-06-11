@@ -79,10 +79,36 @@ You can find things in the Shaders folder where they are for the materials I've 
 
 The other new stuff are in the prefabs-interactable objects folder where I added new interactable object prefabs.
 
-## Milestone 4 Devlog
-Milestone 4 Devlog goes here.
 ## Final Devlog
-Final Devlog goes here.
+
+### Q1 
+
+The core game loop is to find corresponding keys to unlock corresponding doors and continue exploring until the player finds the quest item. During the exploration, the player will also have to evade or fight enemies that blocks their way. Compared to my original plan, although I didn't implement all the systems like smarter AI and the player picking up objects on the floor to distract the AI, according to the vertical slice, the full game should have more complicated systems inplemented, like smarter AI, more battle mechanics, and larger map with more difficult exploration and hidden keys.
+
+### Q2
+
+The Electrocardiogram in Assets>Materials>Health>Heart_URP_Graph
+
+<img width="2559" height="1462" alt="image" src="https://github.com/user-attachments/assets/5a2a94fe-708c-425b-b125-649e1a7e5890" />
+
+It is modified in Main Camera.cs from Assets>Scripts and the diagram changes color according to the current health of the player
+
+<img width="1900" height="921" alt="image" src="https://github.com/user-attachments/assets/675b363e-a21c-436b-9b02-c464d3d398bf" />
+
+The electrocardiogram is relized by: First multiplying time to a speed value to determine the animation speed, after that add a one minus to make final effect go from left to right instead of the inverse direction. After making the dynamic float value, combine it with a combine node to convert it into a Vector 2D where only the X value changes. This Vector 2D is then connected to the offset to the Tiling and Offset node so that the texture will move from left to right. After that connect the output value to the UV of a gradient texture that I created for the effect so that a gradient of from black to white will move from left to right continuously. After that multiplying the animated texture to a black and white texture of the Electrocardiogram so that a decolorized electrocardiogram will be made. Then connect this to a lerp node to determine the actual color of the black regions and lit (white and gray) regions of the image. The background color, BG Color, will be black and the color for the lit areas, Light Color, will be from changed in code. I've stored 2 colors, green and red and the actual color will lerp through these two values according to the current health percentage.
+
+### Q3
+
+I made a list of all the mechanics I want to implement, then deleted all irrelevant or minor ones, leaving only the basic mechanics to scale down the project. Then, after identifying the core mechanisms that cannot be deleted, I will draw bubble diagrams to connect all the systems and examine their relationships and potential interactions. As for why bubble diagrams are useful, they are the easiest way I've found to clearly represent the relationships between systems. After making the connections between the very basic systems, I will consider adding the deleted mechanics, like more weapon types, to the graph and see if they are applicable. I believe this process of breaking the mechanics down and scaling them can help me see how the basic mechanics work without doing unnecessary work on the minors, and it can also tell me which parts are scaling my project up. It can also give me a vague sense of how each deleted mechanic might affect the final game, and I will consider whether to implement them. When considering how the plan relates to my final vertical slice, I believe it shifts when I encounter real problems that I cannot solve effectively. For example, I planned to make a third-person over-the-shoulder game similar to Resident Evil 4, but in the end, I spent more than 10 hours on the third-person over-the-shoulder mechanics and failed, so I abruptly changed the basic controls to a fixed-camera style similar to Resident Evil 0. These changes according to real situation will always bring about unexpected outcome, for instance, if my game is thirdperson overshoulder, it would be just a regular thirdperson horror game like many other like Resident Evil and Silent Hill Remakes, but when I change the project to fixed camera, there are little fixed camera game now and I could be even creative to do that when everyone's trying to implement the same thing (third-person over-the-shoulder) many other is doing.
+
+
+
+
+
+
+
+
+
 ## Open-source assets
 
 [Road](https://sketchfab.com/3d-models/road--avenue--street-7f657c3eceb343ceaf5e542c50dab27a)
