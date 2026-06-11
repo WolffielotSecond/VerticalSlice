@@ -52,6 +52,11 @@ public class NewPlayer : MonoBehaviour
     public bool isShooting = false;
     private bool isReloading = false;
     private float reloadTimer = 0f;
+
+    [Space]
+    [Header("Models")]
+    public GameObject Hatchet_Model;
+    public GameObject Gun_Model;
     private void Awake()
     {
         normalSpeed = moveSpeed;
@@ -65,7 +70,8 @@ public class NewPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         //_animator = playerObj.GetComponent<Animator>();
         actionMoveYaw = Singleton.Instance._mainCamera.transform.eulerAngles.y;
-
+        Hatchet_Model.SetActive(false);
+        Gun_Model.SetActive(false);
     }
 
     public void DoCameraShake()
@@ -106,6 +112,7 @@ public class NewPlayer : MonoBehaviour
         if (parryTimer >= 1.25f)
         {
             isParrying = false;
+            Hatchet_Model.SetActive(false);
         }
         if (kickTimer < 2f)
         {
@@ -233,6 +240,7 @@ public class NewPlayer : MonoBehaviour
         //Action
         if (Input.GetKeyDown(KeyCode.Space) && isParrying == false && this.gameObject.GetComponent<Player_Stats_Handler>().hasHatchet && !isAiming)
         {
+            Hatchet_Model.SetActive(true);
             _animator.SetTrigger("Block");
             parrywindow = true;
             parryTimer = 0f;
@@ -254,6 +262,7 @@ public class NewPlayer : MonoBehaviour
             isParrying = false;
             if (Variables.Object(gameObject).Get<GameObject>("enemy ref") != null)
             {
+                
                 //face the enemy when parrying
                 playerObj.transform.LookAt(Variables.Object(gameObject).Get<GameObject>("enemy ref").transform);
                 Debug.Log("Player is parrying and facing the enemy");
@@ -310,6 +319,9 @@ public class NewPlayer : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && isAiming && !isShooting && this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded != 0)
         {
+            Singleton.Instance._UI.GetComponent<UI>().audioSource.clip = Singleton.Instance._UI.GetComponent<UI>().Shoot_sfx;
+            Singleton.Instance._UI.GetComponent<UI>().audioSource.pitch = Random.Range(0.9f, 1.1f);
+            Singleton.Instance._UI.GetComponent<UI>().audioSource.Play();
             this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded -= 1;
             _animator.SetTrigger("Shoot");
             isShooting = true;
@@ -330,6 +342,7 @@ public class NewPlayer : MonoBehaviour
         }
         if (isAiming)
         {
+            Gun_Model.SetActive(true);
             FaceMousePoint();
             if (this.gameObject.GetComponent<Player_Stats_Handler>().ammoLoaded == 0 && this.gameObject.GetComponent<Player_Stats_Handler>().ammo != 0 && !isReloading)
             {
@@ -339,6 +352,10 @@ public class NewPlayer : MonoBehaviour
             {
                 Singleton.Instance._UI.GetComponent<UI>().instantPrompt("No Ammo Left!");
             }
+        }
+        else
+        {
+            Gun_Model.SetActive(false);
         }
     }
     

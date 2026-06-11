@@ -106,6 +106,9 @@ public class Interactable_Items : InteractableBase
                 {
                     Singleton.Instance._player.GetComponent<NewPlayer>().enabled = false;
                     Singleton.Instance._UI.GetComponent<UI>().WinScreen.SetActive(true);
+                    Singleton.Instance._UI.GetComponent<UI>().audioSource.clip = Singleton.Instance._UI.GetComponent<UI>().Win_sfx;
+                    Singleton.Instance._UI.GetComponent<UI>().audioSource.pitch = 1f;
+                    Singleton.Instance._UI.GetComponent<UI>().audioSource.Play();
                 }
                 else
                 {

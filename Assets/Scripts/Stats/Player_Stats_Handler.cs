@@ -79,6 +79,9 @@ public class Player_Stats_Handler : MonoBehaviour
         {
             Health = 0;
             Singleton.Instance._UI.GetComponent<UI>().DeathScreen.SetActive(true);
+            Singleton.Instance._UI.GetComponent<UI>().audioSource.clip = Singleton.Instance._UI.GetComponent<UI>().Death_sfx;
+            Singleton.Instance._UI.GetComponent<UI>().audioSource.pitch = 1f;
+            Singleton.Instance._UI.GetComponent<UI>().audioSource.Play();
             Time.timeScale = 0f;
         }
     }
@@ -94,6 +97,8 @@ public class Player_Stats_Handler : MonoBehaviour
         {
             if (Health < 100)
             {
+                Singleton.Instance._UI.GetComponent<UI>().audioSource.clip = Singleton.Instance._UI.GetComponent<UI>().Heal_sfx;
+                Singleton.Instance._UI.GetComponent<UI>().audioSource.Play();
                 Health += 20;
                 medkits -= 1;
             }

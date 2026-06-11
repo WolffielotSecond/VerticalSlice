@@ -13,6 +13,8 @@ public class ZombieStatsRegulator : MonoBehaviour, IDamagable
     public GameObject MeleeIndicator;
     public GameObject MeleeWholeGameObject;
     private float Tenacity = MaxTenacity;
+    public AudioSource audioSource;
+    public AudioClip Death_sfx;
     [Header("不用编辑")]
     public Animator _animator;
     private void Start()
@@ -65,6 +67,7 @@ public class ZombieStatsRegulator : MonoBehaviour, IDamagable
             // 正确用法：调用静态方法 Variables.Object(gameObject) 来获取目标对象的 Variables 实例，
             // 然后调用 Set 方法设置键值对。
             // 这里把敌人引用清空，使用 Singleton 中的 _player 对象作为目标。
+            
             Variables.Object(Singleton.Instance._player).Set("enemy ref", null);
             MeleeWholeGameObject.SetActive(false);
             GetComponent<NavMeshAgent>().enabled = false;
@@ -103,5 +106,11 @@ public class ZombieStatsRegulator : MonoBehaviour, IDamagable
     {
         Tenacity = MaxTenacity;
         Variables.Object(gameObject).Set("IsStunned", false);
+    }
+    public void DeathAudio()
+    {
+        audioSource.clip = Death_sfx;
+        audioSource.pitch = 1.5f;
+        audioSource.Play();
     }
 }

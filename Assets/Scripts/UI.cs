@@ -55,6 +55,17 @@ public class UI : MonoBehaviour
     public GameObject Key;
     public WhichDoor doorType;
     public InteractableUnlockedDoorScript _doorScript;
+    [Space]
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip pick_up_sfx;
+    public AudioClip Heal_sfx;
+    public AudioClip Parry_sfx;
+    public AudioClip Shoot_sfx;
+    public AudioClip Kick_sfx;
+    public AudioClip footStep_sfx;
+    public AudioClip Death_sfx;
+    public AudioClip Win_sfx;
 
     private float timer = 0f;
     private Vector3 originalPos;
@@ -63,6 +74,9 @@ public class UI : MonoBehaviour
     private bool InteractionMenuOpened = false;
     IEnumerator CaptureScreen()
     {
+        audioSource.clip = pick_up_sfx;
+        audioSource.pitch = 1f;
+        audioSource.Play();
         yield return new WaitForEndOfFrame();
 
         screenshot = ScreenCapture.CaptureScreenshotAsTexture();
@@ -76,7 +90,7 @@ public class UI : MonoBehaviour
     public void OpenMenu()
     {
         StartCoroutine(CaptureScreen());
-        originalPos = pickupIcon.gameObject.transform.position;
+        originalPos = new Vector3(0, 90, 0);//pickupIcon.gameObject.transform.position;
     }
     public void CloseMenu()
     {
@@ -293,6 +307,7 @@ public class UI : MonoBehaviour
     
     private void Update()
     {
+        audioSource.transform.position = Singleton.Instance._player.transform.position;
         if (promptActive)
         {
             promptTimer -= Time.deltaTime;
